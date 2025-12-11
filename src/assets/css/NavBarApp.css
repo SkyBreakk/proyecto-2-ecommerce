@@ -1,0 +1,124 @@
+/* ===================== NAVBAR ===================== */
+
+.nav-custom {
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .btn-link-custom {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    color: var(--text-inverse);
+    cursor: pointer;
+  }
+  
+  .btn-link-custom:hover {
+    background: var(--bg-hover);
+    border-radius: 6px;
+  }
+  
+  /* ===================== MODAL LOGIN ===================== */
+  
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 980;
+  }
+  
+  .modal-content {
+    background: var(--bg-card);
+    border-radius: 10px;
+    padding: 28px;
+    min-width: 340px;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: var(--shadow-hover);
+    border: 1px solid var(--border-card);
+  }
+  
+  .modal-title {
+    font-weight: bold;
+    color: var(--text-main);
+    margin-bottom: 4px;
+  }
+  
+  .modal-input {
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 15px;
+  }
+  
+  .modal-input:focus {
+    outline: 2px solid var(--border-focus);
+  }
+  
+  .modal-btn-primary {
+    background: var(--btn-primary);
+    color: var(--btn-primary-text);
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .modal-btn-primary:hover {
+    background: var(--btn-hover);
+  }
+  
+  .modal-btn-secondary {
+    background: var(--btn-secondary);
+    color: var(--btn-secondary-text);
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .logo-img {
+    height: 90px;  /* O prueba 55px si es mucho */
+    width: 200px;
+  }
+  
+  /* ===================== MOBILE FIX ===================== */
+/* ===================== MOBILE FIX ===================== */
+@media (max-width: 420px) {
+
+  /* ❌ ocultar el logo */
+  .logo-img {
+    display: none;
+  }
+
+  /* navbar más compacto */
+  .nav-custom {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  /* 👉 buscador pasa a ocupar el lugar del logo */
+  .search-wrapper {
+    order: -1;                 /* 🟢 aparece a la izquierda */
+    flex-grow: 1;              /* 🟢 ocupa todo el ancho posible */
+    max-width: 100%;           /* 🟢 evita que quede chiquito */
+    margin-right: 8px;         /* separa del botón hamburguesa */
+  }
+
+  /* estilo del input para que llene bien */
+  .search-wrapper form {
+    width: 100%;
+    max-width: unset !important;
+  }
+
+  /* hamburguesa siempre a la derecha */
+  .navbar-toggler {
+    margin-left: auto;
+  }
+}

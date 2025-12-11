@@ -1,0 +1,64 @@
+/* ===== ROOT ORIGINAL EXACTO ===== */
+:root {
+    /* ======== PALETA BASE ======== */
+    --color-base-100: #F1F3E0;
+    --color-base-200: #D2DCB6;
+    --color-base-300: #A1BC98;
+    --color-base-400: #778873;
+
+    /* ======== FONDOS ======== */
+    --bg-main: var(--color-base-100);
+    --bg-secondary: var(--color-base-200);
+    --bg-card: #ffffff;
+    --bg-hover: rgba(161, 188, 152, 0.15);
+    --bg-accent: var(--color-base-300);
+
+    /* ======== TEXTO ======== */
+    --text-main: #2D2D2D;
+    --text-secondary: var(--color-base-400);
+    --text-inverse: #ffffff;
+    --text-muted: rgba(45,45,45,0.6);
+
+    /* ======== BOTONES ======== */
+    --btn-primary: var(--color-base-300);
+    --btn-primary-text: #ffffff;
+    --btn-secondary: var(--color-base-200);
+    --btn-secondary-text: #2D2D2D;
+    --btn-disabled: rgba(119,136,115,0.3);
+    --btn-hover: var(--color-base-400);
+
+    /* ======== BORDES ======== */
+    --border-light: rgba(0,0,0,0.08);
+    --border-medium: rgba(0,0,0,0.15);
+    --border-card: rgba(0,0,0,0.05);
+    --border-focus: var(--color-base-300);
+
+    /* ======== ALERTAS Y ESTADOS ======== */
+    --success: #6CB58F;
+    --success-bg: rgba(108,181,143,0.15);
+    --success-text: #175B3F;
+
+    --warning: #E6BB68;
+    --warning-bg: rgba(230,187,104,0.18);
+    --warning-text: #6E4C1B;
+
+    --error: #C66D6D;
+    --error-bg: rgba(198,109,109,0.18);
+    --error-text: #5C1D1D;
+
+    /* ======== SOMBRAS ======== */
+    --shadow-light: 0 2px 4px rgba(0,0,0,0.06);
+    --shadow-medium: 0 4px 10px rgba(0,0,0,0.10);
+    --shadow-hover: 0 6px 14px rgba(0,0,0,0.12);
+
+    /* ======== GRADIENTES ======== */
+    --gradient-primary: linear-gradient(135deg, var(--color-base-200), var(--color-base-300));
+    --gradient-accent: linear-gradient(135deg, var(--color-base-300), var(--color-base-400));
+
+    /* ======== DERIVADOS (EXTRA TONOS) ======== */
+    --color-base-050: #FAFBF3;
+    --color-base-150: #E7EDD0;
+    --color-base-250: #C4D2A7;
+    --color-base-325: #8EAF8A;
+    --color-base-450: #4E5F50;
+}
