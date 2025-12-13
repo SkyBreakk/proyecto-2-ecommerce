@@ -1,15 +1,24 @@
-export default function SearchBar() {
-    return (
-      <form
-        className="d-flex mx-lg-auto my-2 my-lg-0"
-        style={{ maxWidth: "350px", width: "100%" }}
-      >
-        <input
-          className="form-control form-control-sm"
-          type="search"
-          placeholder="Buscar productos..."
-        />
-      </form>
-    );
-  }
-  
+import { useState } from "react";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
+function SearchBar() {
+  const [query, setQuery] = useState("");
+
+  return (
+    <div className="search-container d-flex">
+      <input
+        type="text"
+        className="form-control search-input"
+        placeholder="Buscar productos..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+      />
+
+      <button className="btn search-btn">
+        <i className="bi bi-search"></i>
+      </button>
+    </div>
+  );
+}
+
+export default SearchBar;

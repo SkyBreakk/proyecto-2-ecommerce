@@ -1,12 +1,12 @@
 import { BrowserRouter } from "react-router-dom";
 import RoutesPrincipal from "./routes/RoutesPrincipal";
-import NavBarApp from "./components/Navbar/NavBarApp";  // importa el navbar
+import NavBar from "./components/navbar/NavBar";
 
 function App() {
   return (
     <BrowserRouter>
       {/* ⭐ Navbar siempre visible */}
-      <NavBarApp />
+     <NavBar />
 
       {/* ⭐ Acá van todas las rutas */}
       <RoutesPrincipal />

@@ -1,124 +1,203 @@
-/* ===================== NAVBAR ===================== */
+@import "./root.css";
 
-.nav-custom {
-    background: var(--gradient-primary);
-    box-shadow: var(--shadow-medium);
-  }
-  
-  .btn-link-custom {
-    background: none;
-    border: none;
-    padding: 8px 12px;
-    color: var(--text-inverse);
-    cursor: pointer;
-  }
-  
-  .btn-link-custom:hover {
-    background: var(--bg-hover);
-    border-radius: 6px;
-  }
-  
-  /* ===================== MODAL LOGIN ===================== */
-  
-  .modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.45);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 980;
-  }
-  
-  .modal-content {
-    background: var(--bg-card);
-    border-radius: 10px;
-    padding: 28px;
-    min-width: 340px;
-    max-width: 380px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    box-shadow: var(--shadow-hover);
-    border: 1px solid var(--border-card);
-  }
-  
-  .modal-title {
-    font-weight: bold;
-    color: var(--text-main);
-    margin-bottom: 4px;
-  }
-  
-  .modal-input {
-    border: 1px solid var(--border-light);
-    border-radius: 6px;
-    padding: 10px;
-    font-size: 15px;
-  }
-  
-  .modal-input:focus {
-    outline: 2px solid var(--border-focus);
-  }
-  
-  .modal-btn-primary {
-    background: var(--btn-primary);
-    color: var(--btn-primary-text);
-    border: none;
-    padding: 10px;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  
-  .modal-btn-primary:hover {
-    background: var(--btn-hover);
-  }
-  
-  .modal-btn-secondary {
-    background: var(--btn-secondary);
-    color: var(--btn-secondary-text);
-    border: none;
-    padding: 8px;
-    border-radius: 6px;
-    cursor: pointer;
-  }
+/* ===== NAVBAR GENERAL ===== */
+.navbar-app {
+  width: 100%;
+  padding: 12px 18px;
+  background: var(--gradient-primary);
+  box-shadow: var(--shadow-medium);
+  position: relative;
+}
 
-  .logo-img {
-    height: 90px;  /* O prueba 55px si es mucho */
-    width: 200px;
-  }
-  
-  /* ===================== MOBILE FIX ===================== */
-/* ===================== MOBILE FIX ===================== */
-@media (max-width: 420px) {
+/* ===== LOGO ===== */
+.logo-img {
+  height: 100px;
+  width: 200px;
+  object-fit: cover
+ }
 
-  /* ❌ ocultar el logo */
-  .logo-img {
-    display: none;
-  }
+/* ===== BUSCADOR ===== */
+.search-container {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 0 6px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light);
+  width: 100%;
+  max-width: 650px;
+}
 
-  /* navbar más compacto */
-  .nav-custom {
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
+.search-input {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  font-size: 1rem;
+  color: var(--text-main);
+}
 
-  /* 👉 buscador pasa a ocupar el lugar del logo */
-  .search-wrapper {
-    order: -1;                 /* 🟢 aparece a la izquierda */
-    flex-grow: 1;              /* 🟢 ocupa todo el ancho posible */
-    max-width: 100%;           /* 🟢 evita que quede chiquito */
-    margin-right: 8px;         /* separa del botón hamburguesa */
-  }
+.search-btn {
+  background: var(--btn-primary);
+  color: var(--btn-primary-text);
+  border-radius: 6px;
+}
 
-  /* estilo del input para que llene bien */
-  .search-wrapper form {
-    width: 100%;
-    max-width: unset !important;
+.search-btn:hover {
+  background: var(--btn-hover);
+}
+
+/* ===== MENU DESKTOP ===== */
+.nav-menu li a {
+  color: var(--text-inverse);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav-menu li i {
+  color: var(--text-inverse);
+  font-size: 1.1rem;
+}
+
+/* ===== MOBILE ===== */
+.navbar-mobile {
+  margin-left: 12px;
+}
+
+.toggle-btn {
+  background: var(--btn-secondary);
+  color: var(--btn-secondary-text);
+  border-radius: 6px;
+}
+
+.toggle-btn:hover {
+  background: var(--bg-hover);
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu {
+  position: absolute;
+  top: 65px;
+  right: 10px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 12px 16px;
+  width: 180px;
+  box-shadow: var(--shadow-hover);
+  border: 1px solid var(--border-card);
+}
+
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.mobile-menu li i {
+  color: var(--text-main);
+}
+
+.mobile-menu li a {
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .navbar-left {
+    display: none !important; /* Oculta logo */
   }
 
-  /* hamburguesa siempre a la derecha */
-  .navbar-toggler {
-    margin-left: auto;
+  .navbar-right {
+    display: none !important; /* Oculta menú desktop */
   }
+
+  .search-container {
+    max-width: 100%;
+  }
+}
+
+/* 🔧 FIX: separar logo del buscador */
+.navbar-left {
+  margin-right: 20px;
+  width: 160px;          /* ANCHO FIJO */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* 🔧 FIX: evitar que el buscador “toque” el logo */
+.navbar-center {
+  flex: 1;               /* Ocupa el resto del espacio */
+  margin-left: 300px; 
+  padding-left: 10px;
+}
+
+/* 🔧 FIX: eliminar punto negro en menú */
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  list-style: none;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: var(--text-inverse);
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.menu-btn:hover {
+  opacity: 0.8;
+}
+
+/* NAVBAR */
+.navbar-app {
+  width: 100%;
+  padding: 10px 20px;
+  background: var(--gradient-primary);
+  box-shadow: var(--shadow-medium);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* FIX: evita separación excesiva */
+  gap: 20px; /* FIX: separación uniforme */
+}
+
+/* LOGO */
+.navbar-left {
+  width: 180px; /* ancho fijo tipo ML */
+  display: flex;
+  align-items: center;
+}
+
+/* BUSCADOR */
+.navbar-center {
+  flex: 1;                 /* ocupa el espacio central */
+  max-width: 600px;        /* evita que sea demasiado ancho */
+  display: flex;
+  justify-content: center;
+}
+
+.search-container {
+  width: 100%;
+}
+
+/* MENÚ */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }

@@ -1,54 +1,54 @@
-import { Link } from "react-router-dom";
-import SearchBar from "./SearchBar.jsx";
-import logo from "../../assets/logo.png";   // <=== IMPORTANTE
+import { useState } from "react";
+import "../../assets/css/NavBarApp.css";
+import Logo from "./Logo";
+import SearchBar from "./SearchBar";
+import NavMenu from "./NavMenu";
+import MobileToggle from "./MobileToggle";
+import CartModal from "../modals/CartModal";
+import LoginModal from "../modals/LoginModal";
 
-export default function NavBar({ abrirModal }) {
+function NavBar() {
+
+  const [openCart, setOpenCart] = useState(false);
+  const [openLogin, setOpenLogin] = useState(false);
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark px-4 nav-custom">
-      
-      {/* LOGO EN IMAGEN */}
-      <Link className="navbar-brand d-flex align-items-center" to="/">
-        <img 
-          src={logo}
-          alt="Logo"
-          className="logo-img"
-        />
-      </Link>
+    <>
+      <nav className="navbar-app">
 
-      {/* HAMBURGUESA */}
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarMenu"
-      >
-        <span className="navbar-toggler-icon"></span>
-      </button>
+        {/* Logo desktop */}
+        <div className="navbar-left d-none d-md-flex">
+          <Logo />
+        </div>
 
-      {/* CONTENIDO */}
-      <div className="collapse navbar-collapse" id="navbarMenu">
-        <SearchBar />
+        {/* Buscador siempre visible */}
+        <div className="navbar-center">
+          <SearchBar />
+        </div>
 
-        <ul className="navbar-nav ms-auto align-items-center">
-          <li className="nav-item">
-            <Link className="nav-link" to="/catalogo">
-              Catálogo
-            </Link>
-          </li>
+        {/* Menú desktop */}
+        <div className="navbar-right d-none d-md-flex">
+          <NavMenu 
+            onOpenCart={() => setOpenCart(true)}
+            onOpenLogin={() => setOpenLogin(true)}
+          />
+        </div>
 
-          <li className="nav-item">
-            <Link className="nav-link" to="/carrito">
-              <i className="bi bi-cart-fill"></i> Carrito
-            </Link>
-          </li>
+        {/* Mobile toggle */}
+        <div className="navbar-mobile d-flex d-md-none">
+          <MobileToggle 
+            onOpenCart={() => setOpenCart(true)}
+            onOpenLogin={() => setOpenLogin(true)}
+          />
+        </div>
 
-          <li className="nav-item">
-            <button className="nav-link btn-link-custom" onClick={abrirModal}>
-              <i className="bi bi-person"></i> Iniciar sesión
-            </button>
-          </li>
-        </ul>
-      </div>
-    </nav>
+      </nav>
+
+      {/* MODALS */}
+      {openCart && <CartModal onClose={() => setOpenCart(false)} />}
+      {openLogin && <LoginModal onClose={() => setOpenLogin(false)} />}
+    </>
   );
 }
+
+export default NavBar;
