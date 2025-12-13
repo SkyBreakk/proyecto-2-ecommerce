@@ -21,7 +21,7 @@ function NavBar() {
           <Logo />
         </div>
 
-        {/* Buscador siempre visible */}
+        {/* Buscador */}
         <div className="navbar-center">
           <SearchBar />
         </div>
@@ -34,7 +34,7 @@ function NavBar() {
           />
         </div>
 
-        {/* Mobile toggle */}
+        {/* Menú mobile */}
         <div className="navbar-mobile d-flex d-md-none">
           <MobileToggle 
             onOpenCart={() => setOpenCart(true)}
@@ -44,9 +44,16 @@ function NavBar() {
 
       </nav>
 
-      {/* MODALS */}
-      {openCart && <CartModal onClose={() => setOpenCart(false)} />}
-      {openLogin && <LoginModal onClose={() => setOpenLogin(false)} />}
+      {/* MODALS CORREGIDOS */}
+      <CartModal 
+        open={openCart} 
+        onClose={() => setOpenCart(false)} 
+      />
+
+      <LoginModal 
+        open={openLogin} 
+        onClose={() => setOpenLogin(false)} 
+      />
     </>
   );
 }

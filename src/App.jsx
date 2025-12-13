@@ -5,7 +5,6 @@ import HomeScreen from "./views/HomeScreen";
 function App() {
   return (
     <BrowserRouter>
-     <HomeScreen />
       <RoutesPrincipal />
     </BrowserRouter>
   );
