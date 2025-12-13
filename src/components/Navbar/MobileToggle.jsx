@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MobileMenu from "../MobileMenu";
+import MobileMenu from "./MobileMenu";
 
 function MobileToggle({ onOpenCart, onOpenLogin }) {
   const [open, setOpen] = useState(false);
