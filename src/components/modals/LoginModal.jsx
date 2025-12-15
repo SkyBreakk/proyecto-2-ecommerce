@@ -1,23 +1,52 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../../assets/css/NavBarApp.css";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { UserContext } from "../../context/UserContext";
+
 
 function LoginModal({ open, onClose }) {
-  const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
 
   if (!open) return null;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Login simulado! 😎");
-  };
+  // Declaracion del Navigate
+  const navigate = useNavigate();
+  // Declaracion de los componentes del useForm
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  // Se trae los datos del contexto
+  const { logIn, logOut } = useContext(UserContext);
+
+  const [usuarios, setUsuarios] = useState(JSON.parse(localStorage.getItem("usuarios")) || []);
+
+  const [mensaje, setMensaje] = useState(false);
+
+  const [mensajePass, setMensajePass] = useState(false);
+
+  const iniciarSesion = (data) => {
+    if (data.correo && data.password) {
+
+      let posicion = usuarios.findIndex((usuario) => {
+        return (usuario.correo === data.correo);
+      });
+
+      if (posicion != -1) {
+        if ( usuarios[posicion].password === data.password ) {
+          setMensaje(false);
+          setMensajePass(false);
+          logIn(usuarios[posicion].nombre, usuarios[posicion].correo, usuarios[posicion].password);
+        } else {
+          setMensajePass(true);
+        }
+      } else {
+        setMensaje(true);
+      }
+    }
+  }
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div 
-        className="modal-container"
-        onClick={(e) => e.stopPropagation()}
-      >
+      <div className="modal-container" onClick={(e) => e.stopPropagation()}>
+
         <div className="modal-header">
           <h2>Iniciar sesión</h2>
           <button className="modal-close" onClick={onClose}>
@@ -26,37 +55,43 @@ function LoginModal({ open, onClose }) {
         </div>
 
         <div className="modal-body">
-          <form onSubmit={handleSubmit} className="modal-form">
+          <form onSubmit={handleSubmit(iniciarSesion)} noValidate className="modal-form">
 
             <div className="form-group">
               <label>Email</label>
-              <input 
-                type="email" 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
+              <input type="email"
+                {...register("correo", {
+                  required: "El correo es obligatorio"
+                })} />
+              {errors.correo && (<p className="text-danger">{errors.correo.message}</p>)}
             </div>
 
             <div className="form-group">
               <label>Contraseña</label>
-              <input 
-                type="password" 
-                value={pass}
-                onChange={(e) => setPass(e.target.value)}
-                required
-              />
+              <input type="password"
+                {...register("password", {
+                  required: "La contraseña es obligatoria"
+                })} />
+              {errors.password && (<p className="text-danger">{errors.password.message}</p>)}
             </div>
-
+            {mensaje && <p className="text-danger text-center">La cuenta no existe</p>}
+            {mensajePass && <p className="text-danger text-center">Contraseña incorrecta</p>}
             <button type="submit" className="btn-primary w-100">
               Iniciar sesión
             </button>
+
           </form>
         </div>
 
+
         <div className="modal-footer">
+          <button className="btn-secondary" onClick={() => {
+            navigate("/Register");
+            onClose();
+          }}>Crear Cuenta</button>
           <button className="btn-secondary" onClick={onClose}>Cerrar</button>
         </div>
+
       </div>
     </div>
   );
