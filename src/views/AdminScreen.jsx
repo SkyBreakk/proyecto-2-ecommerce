@@ -22,6 +22,9 @@ function AdminScreen() {
         <section className="container-fluid">
             <div className="row vh-100 align-items-center">
                 <div className="col-12 col-md-6 offset-md-3 p-3 admin-contenedor rounded">
+                    <div className="text-center mb-3">
+                        <h1>Usuarios registrados</h1>
+                    </div>
                     <table className="table table-striped table-light">
                         <thead>
                             <tr>
