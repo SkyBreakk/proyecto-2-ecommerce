@@ -1,0 +1,85 @@
+.search-screen {
+  min-height: 100vh;
+  background-color: var(--bg-main);
+}
+
+.search-box {
+  border-radius: 1.1rem;
+}
+
+#filtro {
+  background-color: var(--bg-secondary);
+
+  & .row {
+    border-bottom: 1px solid var(--color-base-400);
+  }
+
+  & .btn-check:not(:checked) + .btn {
+    background-color: #f0f0f0;
+    color: #333333;
+    border: 1px solid #cccccc;
+    transition: all 0.2s ease-in-out;
+  }
+
+  & .btn-check:not(:checked) + .btn:hover {
+    background-color: #e0e0e0;
+    border-color: #bbbbbb;
+  }
+
+  & .btn-check:checked + .btn {
+    background-color: var(--success);
+    color: white;
+    border-color: var(--success);
+    box-shadow: 0 0 0 0.1rem var(--success-bg);
+  }
+}
+
+#productos {
+  background-color: var(--color-base-050);
+}
+
+.tarjeta-producto {
+  width: 210px;
+  height: 300px;
+  padding: 10px;
+  border-radius: 1.1rem;
+  background-color: var(--bg-card);
+  text-wrap: wrap;
+  transition: ease-in 0.15s;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-hover);
+  }
+  & h4 {
+    font-size: 1.1rem;
+  }
+  & img {
+    height: 150px;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 991px) {
+  #filtro {
+    border-top-left-radius: 1.1rem;
+    border-top-right-radius: 1.1rem;
+  }
+  #productos {
+    border-bottom-left-radius: 1.1rem;
+    border-bottom-right-radius: 1.1rem;
+    min-height: 40vh;
+  }
+}
+
+@media (min-width: 992px) {
+  #filtro {
+    border-top-left-radius: 1.1rem;
+    border-bottom-left-radius: 1.1rem;
+  }
+  #productos {
+    border-top-right-radius: 1.1rem;
+    border-bottom-right-radius: 1.1rem;
+    min-height: 90vh;
+  }
+}
