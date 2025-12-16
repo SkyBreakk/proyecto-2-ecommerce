@@ -1,10 +1,9 @@
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, NavLink, useNavigate } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 
 function NavMenu({ onOpenCart, onOpenLogin }) {
-
   const navigate = useNavigate();
 
   const { user, logOut } = useContext(UserContext);
@@ -12,11 +11,10 @@ function NavMenu({ onOpenCart, onOpenLogin }) {
   const onCloseLogin = () => {
     logOut();
     navigate("/");
-  }
+  };
 
   return (
     <ul className="nav-menu">
-
       {/* INICIO */}
       <li>
         <Link to="/" className="menu-link">
@@ -26,9 +24,9 @@ function NavMenu({ onOpenCart, onOpenLogin }) {
 
       {/* Enlace a admin si el usuario logueado es administrador*/}
 
-      {(user.isLogin && user.rol === "admin") && (
+      {user.isLogin && user.rol === "admin" && (
         <li>
-          <NavLink className="menu-link" to="admin" >
+          <NavLink className="menu-link" to="admin">
             Admin
           </NavLink>
         </li>
@@ -44,19 +42,17 @@ function NavMenu({ onOpenCart, onOpenLogin }) {
       {/* LOGIN */}
 
       <li>
-        {
-          user.isLogin ? (
-            <button className="menu-btn" onClick={() => onCloseLogin()}>
-              <i className="bi bi-person"></i> Cerrar sesión
-            </button>
-          ) : (
-            <button className="menu-btn" onClick={onOpenLogin}>
-              <i className="bi bi-person"></i> Iniciar sesión
-            </button>)
-        }
-      </li >
-
-    </ul >
+        {user.isLogin ? (
+          <button className="menu-btn" onClick={() => onCloseLogin()}>
+            <i className="bi bi-person"></i> Cerrar sesión
+          </button>
+        ) : (
+          <button className="menu-btn" onClick={onOpenLogin}>
+            <i className="bi bi-person"></i> Iniciar sesión
+          </button>
+        )}
+      </li>
+    </ul>
   );
 }
 
