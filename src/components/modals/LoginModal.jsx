@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import "../../assets/css/NavBarApp.css";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -35,8 +35,7 @@ function LoginModal({ open, onClose }) {
         if ( usuarios[posicion].password === data.password ) {
           setMensaje(false);
           setMensajePass(false);
-          logIn(usuarios[posicion].nombre, usuarios[posicion].correo, usuarios[posicion].password);
-          navigate("/");
+          logIn(usuarios[posicion].nombre, usuarios[posicion].correo, usuarios[posicion].password,usuarios[posicion].rol);
           onClose();
         } else {
           setMensajePass(true);
@@ -90,7 +89,7 @@ function LoginModal({ open, onClose }) {
 
         <div className="modal-footer">
           <button className="btn-secondary" onClick={() => {
-            navigate("/Register");
+            navigate("register");
             onClose();
           }}>Crear Cuenta</button>
           <button className="btn-secondary" onClick={onClose}>Cerrar</button>

@@ -1,15 +1,19 @@
 @import "./root.css";
 
+.admin-box {
+  background-color: var(--bg-main);
+}
+
 .admin-contenedor {
-    background-color: var(--color-base-300);
+  background-color: var(--color-base-300);
 }
 
-.admin-boton{
-    background-color: var(--error-text);
-    color: var(--color-base-100);
+.admin-boton {
+  background-color: var(--error-text);
+  color: var(--color-base-100);
 }
 
-.admin-boton:hover{
-    border-color: var(--error-text);
-    color: var(--error-text);
+.admin-boton:hover {
+  border-color: var(--error-text);
+  color: var(--error-text);
 }

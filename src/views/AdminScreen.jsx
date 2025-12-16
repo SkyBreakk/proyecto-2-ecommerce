@@ -1,50 +1,59 @@
 import { useState, useEffect } from "react";
-import ListarUsuarios from "../components/ListarUsuarios"
-import "../assets/css/AdminScreen.css"
+import ListarUsuarios from "../components/ListarUsuarios";
+import "../assets/css/AdminScreen.css";
 
 function AdminScreen() {
-    const [usuarios, setUsuarios] = useState(
-        JSON.parse(localStorage.getItem("usuarios")) || []);
+  const [usuarios, setUsuarios] = useState(
+    JSON.parse(localStorage.getItem("usuarios")) || []
+  );
 
-    useEffect(() => {
-        localStorage.setItem("usuarios", JSON.stringify(usuarios))
-    }, [usuarios]);
+  useEffect(() => {
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  }, [usuarios]);
 
-    function borrarUsuario(correo) {
-        setUsuarios(
-            usuarios.filter((usuario) => {
-                return usuario.correo != correo
-            })
-        );
-    }
+  function borrarUsuario(correo) {
+    setUsuarios(
+      usuarios.filter((usuario) => {
+        return usuario.correo != correo;
+      })
+    );
+  }
 
-    return <>
-        <section className="container-fluid">
-            <div className="row vh-100 align-items-center">
-                <div className="col-12 col-md-6 offset-md-3 p-3 admin-contenedor rounded">
-                    <div className="text-center mb-3">
-                        <h1>Usuarios registrados</h1>
-                    </div>
-                    <table className="table table-striped table-light">
-                        <thead>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Correo</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                usuarios.map((usuario, index) => (
-                                    <ListarUsuarios usuario={usuario} key={index} borrarUsuario={borrarUsuario} />
-                                ))
-                            }
-                        </tbody>
-                    </table>
-                </div>
+  //usuarios.map((usuario, index) => (
+  //    <ListarUsuarios usuario={usuario} key={index} borrarUsuario={borrarUsuario} />
+  //))
+
+  return (
+    <>
+      <section className="container-fluid admin-box">
+        <div className="row vh-100 align-items-center">
+          <div className="col-12 col-md-6 offset-md-3 p-3 admin-contenedor rounded">
+            <div className="text-center mb-3">
+              <h1>Usuarios registrados</h1>
             </div>
-        </section>
+            <table className="table table-striped table-light">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Correo</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {usuarios.map((usuario, index) => (
+                  <ListarUsuarios
+                    usuario={usuario}
+                    key={index}
+                    borrarUsuario={borrarUsuario}
+                  />
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
     </>
+  );
 }
 
-export default AdminScreen
+export default AdminScreen;

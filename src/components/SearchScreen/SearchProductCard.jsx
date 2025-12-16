@@ -31,9 +31,11 @@ const SearchProductCard = ({ producto }) => {
         </div>
         <div className="row">
           <div className="div d-flex justify-content-around mb-1">
+            {/* Botón Añadir Carrito */}
             <button type="button" className="btn btn-success">
               <i className="bi bi-cart-plus"></i>
             </button>
+            {/* Botón ver detalles del producto */}
             <button type="button" className="btn btn-outline-secondary">
               Ver Más
             </button>
