@@ -1,0 +1,30 @@
+@import "./root.css";
+
+/*Color para el titulo del Registro*/
+.registro-titulo{
+    color: var(--color-base-450);
+}
+
+/*Color de error*/
+.registro-error{
+    color: var(--error);
+}
+
+/*Colores para los label*/
+.registro-label{
+    color: var(--text-main);
+}
+
+/*Color para el boton*/
+.registro-boton{
+    background-color: var(--color-base-400);
+    color: var(--btn-primary-text);
+}
+.registro-boton:hover{
+    background-color: var(--btn-secondary);
+}
+
+/*Color del fondo*/
+.registro-contenedor{
+    background-color: var(--color-base-300);
+}

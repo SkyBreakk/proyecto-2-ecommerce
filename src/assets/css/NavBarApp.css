@@ -1,0 +1,345 @@
+@import "./root.css";
+
+/* ===========================================================
+   NAVBAR GENERAL
+   =========================================================== */
+.navbar-app {
+  width: 100%;
+  padding: 10px 20px;
+  background: var(--gradient-primary);
+  box-shadow: var(--shadow-medium);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+
+/* ===========================================================
+   LOGO
+   =========================================================== */
+.navbar-left {
+  width: 180px;                  /* Ancho fijo como Mercado Libre */
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 100px;
+  width: 200px;
+  object-fit: cover;
+}
+
+
+/* ===========================================================
+   BUSCADOR (CENTRO)
+   =========================================================== */
+.navbar-center {
+  flex: 1;                       /* Ocupa el espacio central */
+  max-width: 650px;              /* Evita que invada el menú */
+  display: flex;
+  justify-content: center;
+}
+
+.search-container {
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light);
+
+  width: 100%;
+  padding: 0 6px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.search-input {
+  flex: 1;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+.search-btn {
+  background: var(--btn-primary);
+  color: var(--btn-primary-text);
+  border-radius: 6px;
+}
+
+.search-btn:hover {
+  background: var(--btn-hover);
+}
+
+
+/* ===========================================================
+   MENÚ DESKTOP (DERECHA)
+   =========================================================== */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  list-style: none;
+}
+
+.nav-menu a,
+.menu-btn {
+  color: var(--text-inverse);
+  font-weight: 500;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.menu-btn:hover,
+.nav-menu a:hover {
+  opacity: 0.8;
+}
+
+.nav-menu i {
+  font-size: 1.1rem;
+}
+
+
+/* ===========================================================
+   MOBILE
+   =========================================================== */
+@media (max-width: 768px) {
+  .navbar-left {
+    display: none !important;      /* Oculta logo */
+  }
+
+  .navbar-right {
+    display: none !important;      /* Oculta menú desktop */
+  }
+
+  .navbar-center {
+    max-width: 100%;
+  }
+}
+
+
+/* ===========================================================
+   BOTÓN MOBILE
+   =========================================================== */
+.navbar-mobile {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-btn {
+  background: var(--btn-secondary);
+  color: var(--btn-secondary-text);
+  border-radius: 6px;
+  padding: 6px 10px;
+  border: none;
+}
+
+.toggle-btn:hover {
+  background: var(--bg-hover);
+}
+
+
+/* ===========================================================
+   MENÚ MOBILE
+   =========================================================== */
+.mobile-menu {
+  position: absolute;
+  top: 65px;
+  right: 10px;
+
+  background: var(--bg-card);
+  padding: 12px 16px;
+  width: 180px;
+
+  border-radius: 12px;
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-hover);
+}
+
+.mobile-menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.mobile-menu li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.mobile-menu li i {
+  color: var(--text-main);
+}
+
+.mobile-menu li a {
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+/* ===== FIX: colores correctos para el menú mobile ===== */
+.mobile-menu .menu-btn {
+  color: var(--text-main) !important;
+}
+
+.mobile-menu i {
+  color: var(--text-main) !important;
+}
+
+.mobile-menu a {
+  color: var(--text-main) !important;
+}
+
+.mobile-menu .menu-btn,
+.mobile-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 6px 4px;   /* ← padding uniforme */
+  width: 100%;        /* ← que ocupe todo el ancho */
+  color: var(--text-main) !important;
+}
+
+/* ============================================================
+   MODAL - BACKDROP
+   ============================================================ */
+   .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  /* ============================================================
+     MODAL - CONTENEDOR
+     ============================================================ */
+  .modal-container {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 22px;
+    width: 380px;
+    max-width: 90%;
+    box-shadow: var(--shadow-hover);
+    border: 1px solid var(--border-light);
+  
+    animation: modalFadeIn 0.25s ease;
+  }
+  
+  @keyframes modalFadeIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+  }
+  
+  /* ============================================================
+     MODAL HEADER
+     ============================================================ */
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  
+  .modal-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--text-main);
+  }
+  
+  .modal-close:hover {
+    opacity: 0.7;
+  }
+  
+  /* ============================================================
+     MODAL BODY
+     ============================================================ */
+  .modal-body {
+    margin-bottom: 14px;
+  }
+  
+  .modal-form .form-group {
+    margin-bottom: 12px;
+  }
+  
+  .modal-form label {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  
+  .modal-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+  }
+  
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  /* BOTONES */
+  .btn-primary {
+    background: var(--btn-primary);
+    color: var(--btn-primary-text);
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+  }
+  
+  .btn-primary:hover {
+    background: var(--btn-hover);
+  }
+  
+  .btn-secondary {
+    background: var(--btn-secondary);
+    color: var(--btn-secondary-text);
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: none;
+    font-weight: 600;
+  }
+  
+  .btn-secondary:hover {
+    background: var(--bg-hover);
+  }
+  
+  .w-100 {
+    width: 100%;
+  }
+  
