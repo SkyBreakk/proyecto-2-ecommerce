@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
@@ -7,7 +7,7 @@ function NavMenu({ onOpenCart, onOpenLogin }) {
 
   const navigate = useNavigate();
 
-  const { user,logOut } = useContext(UserContext);
+  const { user, logOut } = useContext(UserContext);
 
   const onCloseLogin = () => {
     logOut();
@@ -24,6 +24,16 @@ function NavMenu({ onOpenCart, onOpenLogin }) {
         </Link>
       </li>
 
+      {/* Enlace a admin si el usuario logueado es administrador*/}
+
+      {(user.isLogin && user.rol === "admin") && (
+        <li>
+          <NavLink className="menu-link" to="admin" >
+            Admin
+          </NavLink>
+        </li>
+      )}
+
       {/* CARRITO */}
       <li>
         <button className="menu-btn" onClick={onOpenCart}>
@@ -32,7 +42,7 @@ function NavMenu({ onOpenCart, onOpenLogin }) {
       </li>
 
       {/* LOGIN */}
-      {/* Modificación: se muestra Cerrar sesión si no esta logueado */}
+
       <li>
         {
           user.isLogin ? (
@@ -42,7 +52,8 @@ function NavMenu({ onOpenCart, onOpenLogin }) {
           ) : (
             <button className="menu-btn" onClick={onOpenLogin}>
               <i className="bi bi-person"></i> Iniciar sesión
-            </button>)}
+            </button>)
+        }
       </li >
 
     </ul >

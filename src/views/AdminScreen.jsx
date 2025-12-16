@@ -3,6 +3,7 @@ import ListarUsuarios from "../components/ListarUsuarios"
 import "../assets/css/AdminScreen.css"
 
 function AdminScreen() {
+
     const [usuarios, setUsuarios] = useState(
         JSON.parse(localStorage.getItem("usuarios")) || []);
 
@@ -17,6 +18,10 @@ function AdminScreen() {
             })
         );
     }
+
+    //usuarios.map((usuario, index) => (
+    //    <ListarUsuarios usuario={usuario} key={index} borrarUsuario={borrarUsuario} />
+    //))
 
     return <>
         <section className="container-fluid">
@@ -44,6 +49,7 @@ function AdminScreen() {
                 </div>
             </div>
         </section>
+
     </>
 }
 
