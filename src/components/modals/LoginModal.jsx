@@ -36,7 +36,6 @@ function LoginModal({ open, onClose }) {
           setMensaje(false);
           setMensajePass(false);
           logIn(usuarios[posicion].nombre, usuarios[posicion].correo, usuarios[posicion].password,usuarios[posicion].rol);
-          navigate("/");
           onClose();
         } else {
           setMensajePass(true);
@@ -90,7 +89,7 @@ function LoginModal({ open, onClose }) {
 
         <div className="modal-footer">
           <button className="btn-secondary" onClick={() => {
-            navigate("/Register");
+            navigate("register");
             onClose();
           }}>Crear Cuenta</button>
           <button className="btn-secondary" onClick={onClose}>Cerrar</button>

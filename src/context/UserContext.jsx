@@ -10,7 +10,7 @@ export function UserProvider({ children }) {
     password: "",
     rol: "",
     isLogin: false
-  };
+  } ;
 
   const [user, setUser] = useState(initialValue);
 
@@ -24,14 +24,14 @@ export function UserProvider({ children }) {
     });
   }
 
-  const logOut = () => setUser(initialValue);
+  const logOut = () => {
+    setUser(initialValue);
+  };
 
   const datos = { user, logIn, logOut };
 
-  return <>
-    <UserContext.Provider value={datos}>
+  return <UserContext.Provider value={datos}>
       {children}
     </UserContext.Provider>
-  </>
-
+    
 };
