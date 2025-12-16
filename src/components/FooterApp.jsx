@@ -13,10 +13,10 @@ function FooterApp() {
 
         {/* CENTRO - LINK ABOUT */}
         <div className="footer-center">
-          <Link to="/about" className="footer-link fs-4 mx-3">
+          <Link to="/about" className="footer-link fs-5 mx-3">
             Acerca de nosotros
           </Link>
-          <Link to="/about" className="footer-link fs-4 mx-3">
+          <Link to="/about" className="footer-link fs-5 mx-3">
             Contacto
           </Link>
         </div>
