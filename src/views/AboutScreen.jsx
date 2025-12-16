@@ -2,9 +2,9 @@ import "../assets/css/about.css";
 
 // IMPORT DE IMÁGENES
 import rubenImg from "../assets/img/about/ruben.jpg";
-import int2Img from "../assets/img/about/samuel.jpg";
-import int3Img from "../assets/img/about/maria.jpg";
-import int4Img from "../assets/img/about/pablo.jpg";
+import samuelImg from "../assets/img/about/samuel.jpg";
+import mariaImg from "../assets/img/about/maria.jpg";
+import pabloImg from "../assets/img/about/pablo.jpg";
 
 function AboutScreen() {
   return (
@@ -98,7 +98,7 @@ function AboutScreen() {
         <div div className="team-box">
 
         <img
-        src="https://content.nationalgeographic.com.es/medio/2022/12/12/mono-1_d1203896_221212160444_1280x720.jpg"
+        src={mariaImg}
         alt="Maria Morales"
         className="team-photo"
         />
@@ -125,7 +125,7 @@ function AboutScreen() {
         <div div className="team-box">
 
         <img
-        src="https://monkeyworlds.com/wp-content/uploads/human-monkey.webp"
+        src={pabloImg}
         alt="Pablo Padilla"
         className="team-photo"
         />
