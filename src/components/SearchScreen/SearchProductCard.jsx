@@ -10,8 +10,8 @@ const SearchProductCard = ({ producto }) => {
   } = producto;
 
   return (
-    <div className="col-6 col-md-4 col-xxl-3">
-      <div className="tarjeta-producto mx-3 d-flex flex-column justify-content-around">
+    <div className="col-8 col-sm-6 col-md-4 col-xxl-3 d-flex flex-column">
+      <div className="tarjeta-producto mx-3 d-flex flex-column align-self-center justify-content-around">
         {/* Imagen */}
         <div className="row">
           <img src={imagen} alt={titulo} />

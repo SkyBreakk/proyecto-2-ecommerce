@@ -154,7 +154,7 @@ const SearchScreen = () => {
                   </p>
                 </div>
               ) : (
-                <div className="row row-gap-3 py-3">
+                <div className="row row-gap-3 py-3 justify-content-center">
                   {resultadosFiltrados.map((producto) => (
                     <SearchProductCard producto={producto} key={producto.id} />
                   ))}
