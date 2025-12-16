@@ -1,0 +1,482 @@
+[
+  {
+    "id": 1,
+    "title": "Fjallraven - Mochila Foldsack No. 1",
+    "price": 104452.25,
+    "description": "Tu mochila perfecta para el uso diario y paseos por el bosque. Guarda tu portátil (hasta 15 pulgadas) en la funda acolchada, tu equipamiento diario, Compatible con Portátiles de 15 Pulgadas",
+    "category": "Ropa de Hombre",
+    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+    "rating": {
+      "rate": 3.9,
+      "count": 120
+    }
+  },
+  {
+    "id": 2,
+    "title": "Camisetas Casual Premium de Corte Slim",
+    "price": 21185.90,
+    "description": "Estilo de corte ajustado, manga raglán larga en contraste, tapeta henley de tres botones, tejido liviano y suave para un uso transpirable y cómodo. Y camisetas sólidas cosidas con cuello redondo hechas para durabilidad y un gran ajuste para ropa de moda casual y fanáticos acérrimos del béisbol. El escote redondo estilo Henley incluye una tapeta de tres botones.",
+    "category": "Ropa de Hombre",
+    "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_t.png",
+    "rating": {
+      "rate": 4.1,
+      "count": 259
+    }
+  },
+  {
+    "id": 3,
+    "title": "Chaqueta de Algodón",
+    "price": 53190.05,
+    "description": "Excelentes chaquetas de abrigo para Primavera/Otoño/Invierno, adecuadas para muchas ocasiones, como trabajo, senderismo, camping, montañismo/escalada en roca, ciclismo, viajes u otras actividades al aire libre. Buena opción de regalo para ti o tu familiar. Un amor de corazón cálido para el Padre, esposo o hijo en este Día de Acción de Gracias o Día de Navidad.",
+    "category": "Ropa de Hombre",
+    "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png",
+    "rating": {
+      "rate": 4.7,
+      "count": 500
+    }
+  },
+  {
+    "id": 4,
+    "title": "Corte Slim Casual",
+    "price": 15190.55,
+    "description": "El color puede ser ligeramente diferente entre la pantalla y la práctica. / Tenga en cuenta que la constitución física varía según la persona, por lo tanto, la información detallada sobre la talla debe revisarse a continuación en la descripción del producto.",
+    "category": "Ropa de Hombre",
+    "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png",
+    "rating": {
+      "rate": 2.1,
+      "count": 430
+    }
+  },
+  {
+    "id": 5,
+    "title": "Pulsera de Cadena de Estación de Dragón Naga",
+    "price": 660250.50,
+    "description": "De nuestra Colección Legends, el Naga se inspiró en el mítico dragón de agua que protege la perla del océano. Úselo mirando hacia adentro para que le concedan amor y abundancia, o hacia afuera para protección.",
+    "category": "Joyería",
+    "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_t.png",
+    "rating": {
+      "rate": 4.6,
+      "count": 400
+    }
+  },
+  {
+    "id": 6,
+    "title": "Micropave Pequeño de Oro Sólido",
+    "price": 159600.25,
+    "description": "Satisfacción Garantizada. Devuelva o cambie cualquier pedido dentro de los 30 días. Diseñado y vendido por Hafeez Center en los Estados Unidos. Satisfacción Garantizada. Devuelva o cambie cualquier pedido dentro de los 30 días.",
+    "category": "Joyería",
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png",
+    "rating": {
+      "rate": 3.9,
+      "count": 70
+    }
+  },
+  {
+    "id": 7,
+    "title": "Princesa con Baño de Oro Blanco",
+    "price": 9490.00,
+    "description": "Anillo de Promesa de Diamante Solitario de Compromiso de Boda Clásico Creado para Ella. Regalos para mimar más a tu amor para Compromiso, Boda, Aniversario, Día de San Valentín...",
+    "category": "Joyería",
+    "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_t.png",
+    "rating": {
+      "rate": 3,
+      "count": 400
+    }
+  },
+  {
+    "id": 8,
+    "title": "Doble de Acero Inoxidable",
+    "price": 10440.00,
+    "description": "Pendientes de tapón de túnel ensanchado doble con baño de oro rosa. Hecho de Acero Inoxidable 316L",
+    "category": "Joyería",
+    "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_t.png",
+    "rating": {
+      "rate": 1.9,
+      "count": 100
+    }
+  },
+  {
+    "id": 9,
+    "title": "Disco Duro Externo Portátil",
+    "price": 60800.10,
+    "description": "Compatibilidad con USB 3.0 y USB 2.0 Transferencias de datos rápidas Mejora el rendimiento de la PC Alta capacidad; Compatibilidad Formato NTFS para Windows 10, Windows 8.1, Windows 7; Puede requerirse reformatear para otros sistemas operativos; La compatibilidad puede variar dependiendo de la configuración del hardware y el sistema operativo del usuario.",
+    "category": "Electrónica",
+    "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png",
+    "rating": {
+      "rate": 3.3,
+      "count": 203
+    }
+  },
+  {
+    "id": 10,
+    "title": "SanDisk SSD PLUS 1TB SSD Interno",
+    "price": 103550.45,
+    "description": "Actualización fácil para un arranque, apagado, carga de aplicaciones y respuesta más rápidos (en comparación con el disco duro SATA 2.5” de 5400 RPM; Basado en especificaciones publicadas y pruebas internas de evaluación comparativa utilizando puntuaciones de PCMark Vantage) Aumenta el rendimiento de escritura en ráfaga, haciéndolo ideal para cargas de trabajo típicas de PC El equilibrio perfecto entre rendimiento y fiabilidad Velocidades de lectura/escritura de hasta 535MB/s/450MB/s (Basado en pruebas internas; El rendimiento puede variar dependiendo de la capacidad de la unidad, el dispositivo anfitrión, el sistema operativo y la aplicación).",
+    "category": "Electrónica",
+    "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_t.png",
+    "rating": {
+      "rate": 2.9,
+      "count": 470
+    }
+  },
+  {
+    "id": 11,
+    "title": "Silicon Power 256GB SSD",
+    "price": 103550.50,
+    "description": "La memoria flash 3D NAND se aplica para ofrecer altas velocidades de transferencia Velocidades de transferencia notables que permiten un arranque más rápido y un rendimiento general del sistema mejorado. La avanzada Tecnología de Caché SLC permite un aumento del rendimiento y una vida útil más larga Diseño delgado de 7 mm adecuado para Ultrabooks y notebooks ultradelgadas. Soporta el comando TRIM, la tecnología de Recolección de Basura, RAID y ECC (Comprobación y Corrección de Errores) para proporcionar un rendimiento optimizado y una fiabilidad mejorada.",
+    "category": "Electrónica",
+    "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png",
+    "rating": {
+      "rate": 4.8,
+      "count": 319
+    }
+  },
+  {
+    "id": 12,
+    "title": "WD 4TB Gaming Drive",
+    "price": 108300.99,
+    "description": "Expande tu experiencia de juego en PS4, Juega en cualquier lugar Rápido y fácil, configuración Diseño elegante con alta capacidad, 3 años de garantía limitada del fabricante",
+    "category": "Electrónica",
+    "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_t.png",
+    "rating": {
+      "rate": 4.8,
+      "count": 400
+    }
+  },
+  {
+    "id": 13,
+    "title": "Acer SB220Q bi 21.5 pulgadas Full HD",
+    "price": 569050.99,
+    "description": "Pantalla IPS Full HD (1920 x 1080) de 21. 5 pulgadas y tecnología Radeon Free Sync. Sin compatibilidad para montaje VESA Tasa de actualización: 75Hz - Usando puerto HDMI Diseño de marco cero | ultradelgado | tiempo de respuesta de 4ms | panel IPS Relación de aspecto - 16: 9. Color admitido - 16. 7 millones de colores. Brillo - 250 nit Ángulo de inclinación -5 grados a 15 grados. Ángulo de visión horizontal-178 grados. Ángulo de visión vertical-178 grados 75 hercios",
+    "category": "Electrónica",
+    "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png",
+    "rating": {
+      "rate": 2.9,
+      "count": 250
+    }
+  },
+  {
+    "id": 14,
+    "title": "Monitor Curvo Samsung de 49 Pulgadas",
+    "price": 949990.00,
+    "description": "MONITOR CURVO SÚPER ULTRAWIDE 32:9 PARA JUEGOS DE 49 PULGADAS con doble pantalla de 27 pulgadas lado a lado La TECNOLOGÍA QUANTUM DOT (QLED), el soporte HDR y la calibración de fábrica proporcionan un color y contraste asombrosamente realistas y precisos Una ALTA TASA DE REFRESCO de 144HZ y un tiempo de respuesta ultrarrápido de 1ms trabajan para eliminar el desenfoque de movimiento, el efecto fantasma y reducir el retraso de entrada",
+    "category": "Electrónica",
+    "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_t.png",
+    "rating": {
+      "rate": 2.2,
+      "count": 140
+    }
+  },
+  {
+    "id": 15,
+    "title": "Chaqueta de Snowboard 3 en 1",
+    "price": 54140.05,
+    "description": "Nota: Las chaquetas son de talla estándar de EE. UU., Elija la talla como su uso habitual Material: 100% Poliéster; Tejido del Forro Desmontable: Vellón Cálido. Forro Funcional Desmontable: Agradable para la piel, liviano y cálido. Chaqueta con Forro de Cuello Alto, te mantiene abrigado en clima frío. Bolsillos con Cremallera: 2 Bolsillos de Mano con Cremallera, 2 Bolsillos con Cremallera en el Pecho (suficientes para guardar tarjetas o llaves) y 1 Bolsillo Oculto en el Interior. Los Bolsillos de Mano con Cremallera y el Bolsillo Oculto mantienen tus cosas seguras. Diseño Humanizado: Capucha Ajustable y Desmontable y puño Ajustable para prevenir el viento y el agua, para un ajuste cómodo. El Diseño Desmontable 3 en 1 proporciona más comodidad, puedes separar el abrigo y el interior según sea necesario, o usarlos juntos. Es adecuado para diferentes estaciones y te ayuda a adaptarte a diferentes climas.",
+    "category": "Ropa de Mujer",
+    "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_t.png",
+    "rating": {
+      "rate": 2.6,
+      "count": 235
+    }
+  },
+  {
+    "id": 16,
+    "title": "Chaqueta de Motociclista",
+    "price": 28452.25,
+    "description": "100% POLIURETANO (exterior) 100% POLIÉSTER (forro) 75% POLIÉSTER 25% ALGODÓN (SUÉTER), Material de piel sintética para estilo y comodidad / 2 bolsillos delanteros, Chaqueta de piel sintética estilo denim con capucha 2 en 1, Detalle de botón en la cintura / Detalle de costura en los costados, LAVAR A MANO ÚNICAMENTE / NO USAR LEJÍA / SECAR COLGADO / NO PLANCHAR",
+    "category": "Ropa de Mujer",
+    "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_t.png",
+    "rating": {
+      "rate": 2.9,
+      "count": 340
+    }
+  },
+  {
+    "id": 17,
+    "title": "Chaqueta de Lluvia",
+    "price": 37990.00,
+    "description": "Ligera, perfecta para viajes o uso casual---Manga larga con capucha, diseño de cintura con cordón ajustable. Chubasquero con cierre frontal de botón y cremallera, forrado completamente a rayas y el chubasquero tiene 2 bolsillos laterales de buen tamaño para guardar todo tipo de cosas, cubre las caderas y la capucha es generosa pero no exagerada. La capucha forrada de algodón adjunta con cordones ajustables le da un aspecto realmente estilizado.",
+    "category": "Ropa de Mujer",
+    "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2t.png",
+    "rating": {
+      "rate": 3.8,
+      "count": 679
+    }
+  },
+  {
+    "id": 18,
+    "title": "MBJ Cuello de Barco Manga Corta",
+    "price": 9357.00,
+    "description": "95% RAYÓN 5% SPANDEX, Hecho en EE. UU. o importado, No usar lejía, Tejido ligero con gran elasticidad para mayor comodidad, Acanalado en mangas y escote / Doble costura en el dobladillo inferior",
+    "category": "Ropa de Mujer",
+    "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_t.png",
+    "rating": {
+      "rate": 4.7,
+      "count": 130
+    }
+  },
+  {
+    "id": 19,
+    "title": "Humedad de Manga Corta Opna",
+    "price": 7552.00,
+    "description": "100% Poliéster, Lavar a máquina, 100% interlock de poliéster catiónico, Lavar a máquina y Preencogido para un gran ajuste, Ligero, holgado y altamente transpirable con tejido que absorbe la humedad que ayuda a mantener la humedad alejada, Tejido suave y ligero con cómodo cuello en V y un ajuste más delgado, ofrece una silueta más elegante y femenina y Comodidad Adicional",
+    "category": "Ropa de Mujer",
+    "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_t.png",
+    "rating": {
+      "rate": 4.5,
+      "count": 146
+    }
+  },
+  {
+    "id": 20,
+    "title": "Camiseta Casual de Algodón de Manga Corta",
+    "price": 12340.00,
+    "description": "95% Algodón, 5% Spandex, Características: Casual, Manga Corta, Estampado de Letras, Cuello en V, Camisetas de Moda, La tela es suave y tiene algo de elasticidad., Ocasión: Casual/Oficina/Playa/Escuela/Casa/Calle. Temporada: Primavera, Verano, Otoño, Invierno.",
+    "category": "Ropa de Mujer",
+    "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png",
+    "rating": {
+      "rate": 3.6,
+      "count": 145
+    }
+  },
+  {
+    "id": 21,
+    "title": "Chaqueta Cortavientos Impermeable Liger",
+    "price": 85000.00,
+    "description": "Chaqueta cortavientos para exteriores, transpirable y resistente al agua. Ideal para senderismo, camping y uso diario en clima variable. Dispone de capucha ajustable y bolsillos con cremallera.",
+    "category": "Ropa de Hombre",
+    "image": "https://brandit-wear.com/media/5b/aa/c6/1727229674/3167-199_W_002.png?ts=1727229674",
+    "rating": {
+      "rate": 4.5,
+      "count": 85
+    }
+  },
+  {
+    "id": 22,
+    "title": "Pendientes de Aro Elegantes de Plata S925",
+    "price": 18500.00,
+    "description": "Pendientes de aro clásicos y elegantes, fabricados en plata de ley 925 con acabado pulido. El accesorio perfecto para cualquier ocasión, vienen en una caja de regalo premium.",
+    "category": "Joyería",
+    "image": "https://ae01.alicdn.com/kf/S3bcf07135bd144a0a59adbbf19386837j.jpg",
+    "rating": {
+      "rate": 4.8,
+      "count": 210
+    }
+  },
+  {
+    "id": 23,
+    "title": "Smartwatch Deportivo con GPS y Monitor de Ritmo Cardíaco",
+    "price": 95000.00,
+    "description": "Reloj inteligente multifuncional con seguimiento de actividad, monitorización del sueño, notificaciones y batería de larga duración. Ideal para entusiastas del fitness. Compatible con iOS y Android.",
+    "category": "Electrónica",
+    "image": "https://sc04.alicdn.com/kf/Hcd9566d36bb24563967abe7330b17f3by.png",
+    "rating": {
+      "rate": 4.2,
+      "count": 550
+    }
+  },
+  {
+    "id": 24,
+    "title": "Vestido de Verano Floral de Gasa",
+    "price": 45000.00,
+    "description": "Vestido ligero de verano con estampado floral, ideal para paseos, fiestas y eventos casuales. Confeccionado en gasa suave y forro interior para mayor comodidad. Disponible en varias tallas.",
+    "category": "Ropa de Mujer",
+    "image": "https://img2.miravia.es/g/fb/kf/S1a6350c08b5b4717bca86e013d483235M.png_360x360q75.png_.webp",
+    "rating": {
+      "rate": 4.1,
+      "count": 180
+    }
+  },
+  {
+    "id": 25,
+    "title": "Camiseta de Algodón Básico de Manga Corta",
+    "price": 9500.00,
+    "description": "Camiseta de algodón 100% orgánico, cuello redondo, ajuste regular. Perfecta para combinar con jeans o para usar bajo una chaqueta. Un básico imprescindible para el armario.",
+    "category": "Ropa de Hombre",
+    "image": "https://images.jackjones.com/12164972/4025768/001/jackjones-jjesplitneckteessnoos-brown.png?v=7b7a7ee3e8e0a3fc7d79e136580eb255&format=webp&width=1280&quality=90&key=25-0-3",
+    "rating": {
+      "rate": 4.6,
+      "count": 320
+    }
+  },
+  {
+    "id": 26,
+    "title": "Collar con Colgante de Corazón de Cristal Swarovski",
+    "price": 28000.00,
+    "description": "Collar elegante con un colgante en forma de corazón adornado con cristales genuinos de Swarovski. Cadena de plata esterlina ajustable. Regalo ideal para un ser querido.",
+    "category": "Joyería",
+    "image": "https://laperlajoyeriasonline.com/cdn/shop/products/20190125_162822_clipped_rev_1_1200x1200.png?v=1548787737",
+    "rating": {
+      "rate": 4.9,
+      "count": 95
+    }
+  },
+  {
+    "id": 27,
+    "title": "Auriculares Inalámbricos",
+    "price": 75000.00,
+    "description": "Auriculares supraaurales con tecnología avanzada de cancelación de ruido, sonido de alta fidelidad y hasta 30 horas de reproducción. Diseño ergonómico y plegable para fácil transporte.",
+    "category": "Electrónica",
+    "image": "https://www.jbl.com.ar/on/demandware.static/-/Sites-siteCatalog_JB_AR/es_AR/dw93e417ef/thumbs/SUPRESSORES.png",
+    "rating": {
+      "rate": 4.7,
+      "count": 680
+    }
+  },
+  {
+    "id": 28,
+    "title": "Pantalón Chino Elástico de Corte Slim Fit",
+    "price": 55000.00,
+    "description": "Pantalón chino moderno de corte slim fit, confeccionado con un tejido de algodón elástico para máxima comodidad y movimiento. Cierre con botón y cremallera, perfecto para un look casual de oficina.",
+    "category": "Ropa de Hombre",
+    "image": "https://images.jackjones.com/12252350/4431318/001/jackjones-spakmwinstonpants-azul.png?v=90cce78bd3bdb4d47a2bbb9fa133b9ea&format=webp&width=1280&quality=90&key=25-0-3&bg-color=%23f5f5f5",
+    "rating": {
+      "rate": 4.3,
+      "count": 155
+    }
+  },
+  {
+    "id": 29,
+    "title": "Anillo de Compromiso Solitario",
+    "price": 99900.99,
+    "description": "Anillo de compromiso clásico con un diamante solitario certificado en oro blanco de 14 quilates. Un símbolo eterno de amor y compromiso. Incluye certificado de autenticidad.",
+    "category": "Joyería",
+    "image": "https://guvier.com/cdn/shop/products/SDPRE-5707.png?v=1752597799",
+    "rating": {
+      "rate": 5.0,
+      "count": 45
+    }
+  },
+  {
+    "id": 30,
+    "title": "Teclado Mecánico Retroiluminado RGB",
+    "price": 62000.50,
+    "description": "Teclado mecánico de alto rendimiento con interruptores táctiles y respuesta rápida, ideal para juegos. Iluminación RGB personalizable y diseño resistente para largas sesiones de juego.",
+    "category": "Electrónica",
+    "image": "https://shenlong.com.ar/resources/users-uploads/galleries/256/productos/smk5900sb-3.png",
+    "rating": {
+      "rate": 4.6,
+      "count": 410
+    }
+  },
+  {
+    "id": 31,
+    "title": "Blusa Casual de Manga Larga con Estampado Étnico",
+    "price": 32000.00,
+    "description": "Blusa ligera y fluida con un hermoso estampado étnico. Perfecta para el día a día o para un look bohemio. Confeccionada en viscosa suave y con puños elásticos.",
+    "category": "Ropa de Mujer",
+    "image": "https://ae01.alicdn.com/kf/S2b81a1a881c54823890ae7cc5cbcb6ebN.jpg",
+    "rating": {
+      "rate": 4.0,
+      "count": 130
+    }
+  },
+  {
+    "id": 32,
+    "title": "Zapatillas Deportivas de Running",
+    "price": 89000.50,
+    "description": "Zapatillas de alto rendimiento para correr, con tecnología de amortiguación responsiva y suela de alta tracción. Ofrecen soporte y comodidad para largas distancias. Tallas disponibles para hombre.",
+    "category": "Ropa de Hombre",
+    "image": "https://onrunning.footolophy.com.ar/media/wysiwyg/onrunning/cloudultra-m.png",
+    "rating": {
+      "rate": 4.7,
+      "count": 280
+    }
+  },
+  {
+    "id": 33,
+    "title": "Pulsera de Cadena de Oro",
+    "price": 22000.15,
+    "description": "Pulsera de eslabones de estilo minimalista, chapada en oro de 18 quilates con un cierre de seguridad. Perfecta para usar sola o en combinación con otras pulseras. Hipoalergénica.",
+    "category": "Joyería",
+    "image": "https://catajewels.com/cdn/shop/files/PRODUCTOSMINORISTAS-2025-07-20T192512.248.png?v=1753050335",
+    "rating": {
+      "rate": 4.4,
+      "count": 70
+    }
+  },
+  {
+    "id": 34,
+    "title": "Disco Duro Externo Portátil SSD 1TB USB 3.1",
+    "price": 78000.00,
+    "description": "Unidad de estado sólido (SSD) externa de 1TB, ultrarrápida y compacta. Ideal para copias de seguridad de alta velocidad y transferencia de grandes archivos. Incluye cable USB-C.",
+    "category": "Electrónica",
+    "image": "https://webapi3.adata.com/storage/product/01_sd810_pd_2000x2000_1_bk.png",
+    "rating": {
+      "rate": 4.9,
+      "count": 910
+    }
+  },
+  {
+    "id": 35,
+    "title": "Falda Midi Plisada de Cintura Alta",
+    "price": 41000.50,
+    "description": "Falda midi con elegantes pliegues y cintura elástica alta. Tejido ligero y con buena caída, ideal para un look sofisticado o casual. Fácil de combinar con diferentes tops.",
+    "category": "Ropa de Mujer",
+    "image": "https://media.balmain.com/image/upload/f_auto,q_auto,dpr_auto,e_sharpen:85/c_fill,w_432,h_584/sfcc/balmain/hi-res/GF1LC890SF320PAF?_i=AG",
+    "rating": {
+      "rate": 4.3,
+      "count": 140
+    }
+  },
+  {
+    "id": 36,
+    "title": "Gafas de Sol Polarizadas Aviador Clásicas",
+    "price": 15000.10,
+    "description": "Gafas de sol de estilo aviador con lentes polarizadas que reducen el deslumbramiento y ofrecen protección UV400. Montura metálica ligera y almohadillas nasales de silicona para mayor confort.",
+    "category": "Ropa de Hombre",
+    "image": "https://www.thomassabo.com/dw/image/v2/AAQY_PRD/on/demandware.static/-/Sites-ts-master-catalog/default/dwd21bcb84/product/E/E/E0001/E0001-254-106.png?sw=328&sfrm=png",
+    "rating": {
+      "rate": 4.5,
+      "count": 255
+    }
+  },
+  {
+    "id": 37,
+    "title": "Juego de Pulseras de Amistad",
+    "price": 8500.90,
+    "description": "Set de dos pulseras elásticas hechas con cuentas de piedra natural (ónix y turquesa). Ideal para compartir con un amigo o pareja. Viene en una bolsa de terciopelo.",
+    "category": "Joyería",
+    "image": "https://acdn-us.mitiendanube.com/stores/001/365/307/products/verde_clipped_rev_11-55efd82d74b04b940516563745810321-1024-1024.webp",
+    "rating": {
+      "rate": 4.2,
+      "count": 110
+    }
+  },
+  {
+    "id": 38,
+    "title": "Cámara Web Full HD 1080p con Micrófono Estéreo",
+    "price": 38000.80,
+    "description": "Cámara web de alta definición 1080p para videoconferencias y streaming. Incorpora un micrófono estéreo con reducción de ruido y clip ajustable para monitores o trípodes.",
+    "category": "Electrónica",
+    "image": "https://resource.logitech.com/w_544,h_466,ar_7:6,c_pad,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/webcams/c920/gallery/c920-gallery-2.png",
+    "rating": {
+      "rate": 4.4,
+      "count": 370
+    }
+  },
+  {
+    "id": 39,
+    "title": "Cárdigan Largo de Punto Suave",
+    "price": 58000.00,
+    "description": "Cárdigan largo y holgado de punto suave y cálido. Perfecto para superponer capas en otoño e invierno. Bolsillos delanteros y caída elegante. Un básico cómodo y con estilo.",
+    "category": "Ropa de Mujer",
+    "image": "https://vilanewbridge.ie/cdn/shop/files/pRxd44vqgdTd14JryE7jFe1d3WWZ_preview.png?v=1749127284",
+    "rating": {
+      "rate": 4.6,
+      "count": 195
+    }
+  },
+  {
+    "id": 40,
+    "title": "Sudadera con Capucha y Cremallera",
+    "price": 49000.00,
+    "description": "Sudadera con capucha y cremallera completa, mezcla de algodón y poliéster para mayor durabilidad y calidez. Bolsillos estilo canguro y puños acanalados. Ideal para un look deportivo o casual.",
+    "category": "Ropa de Hombre",
+    "image": "https://bcn-needles-ink.es/cdn/shop/files/unisex-heavy-blend-zip-hoodie-royal-front-66b4de214dfc4_2048x.png?v=1723129441",
+    "rating": {
+      "rate": 4.5,
+      "count": 300
+    }
+  }
+]
