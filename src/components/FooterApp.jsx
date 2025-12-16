@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
-import "../../assets/css/footer.css";
+import "../assets/css/footer.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 function FooterApp() {
   return (
     <footer className="footer-app">
       <div className="container-fluid footer-container">
-
         {/* IZQUIERDA */}
         <div className="footer-left">
           <span>© {new Date().getFullYear()} Comercio Libre</span>
@@ -14,10 +13,10 @@ function FooterApp() {
 
         {/* CENTRO - LINK ABOUT */}
         <div className="footer-center">
-          <Link to="/about" className="footer-link">
+          <Link to="/about" className="footer-link fs-4 mx-3">
             Acerca de nosotros
           </Link>
-          <Link to="/about" className="footer-link">
+          <Link to="/about" className="footer-link fs-4 mx-3">
             Contacto
           </Link>
         </div>
@@ -40,7 +39,6 @@ function FooterApp() {
             <i className="bi bi-linkedin"></i>
           </a>
         </div>
-
       </div>
     </footer>
   );
