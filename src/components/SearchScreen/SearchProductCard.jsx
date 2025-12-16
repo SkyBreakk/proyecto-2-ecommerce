@@ -29,6 +29,16 @@ const SearchProductCard = ({ producto }) => {
           <p className="col-5 text-center">⭐{estrellas}</p>
           <p className="col-7 text-center">${precio}</p>
         </div>
+        <div className="row">
+          <div className="div d-flex justify-content-around mb-1">
+            <button type="button" className="btn btn-success">
+              <i className="bi bi-cart-plus"></i>
+            </button>
+            <button type="button" className="btn btn-outline-secondary">
+              Ver Más
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
