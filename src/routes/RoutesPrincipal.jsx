@@ -7,6 +7,7 @@ import SearchScreen from "../views/SearchScreen";
 import RegisterScreen from "../views/RegisterScreen"
 import AdminScreen from "../views/AdminScreen";
 import { UserContext } from "../context/UserContext";
+import AdminRoute from "./AdminRoute";
 
 
 const RoutesPrincipal = () => {
@@ -18,10 +19,12 @@ const RoutesPrincipal = () => {
       <Route path="/" element={<PagesLayout />}>
         <Route index element={<HomeScreen />} />
         <Route path="search" element={<SearchScreen />} />
-        <Route path="/Register" element={<RegisterScreen/>}/>
-        <Route path="/Admin" element={ 
-          user.rol == "admin" ? <AdminScreen/> : <Navigate to="/" /> 
-          }/>
+        <Route path="register" element={<RegisterScreen/>}/>
+        <Route path="admin" element={
+          <AdminRoute>
+            <AdminScreen/>
+          </AdminRoute>
+        }/>
       </Route>
     </Routes>
   );

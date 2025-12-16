@@ -14,12 +14,12 @@ export function UserProvider({ children }) {
 
   const [user, setUser] = useState(initialValue);
 
-  const logIn = (nombre,correo,password) => {
+  const logIn = (nombre,correo,password,rol) => {
     setUser({
       nombre,
       correo,
       password,
-      rol:"invitado",
+      rol,
       isLogin: true
     });
   }

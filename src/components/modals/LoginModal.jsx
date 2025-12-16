@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import "../../assets/css/NavBarApp.css";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -35,7 +35,7 @@ function LoginModal({ open, onClose }) {
         if ( usuarios[posicion].password === data.password ) {
           setMensaje(false);
           setMensajePass(false);
-          logIn(usuarios[posicion].nombre, usuarios[posicion].correo, usuarios[posicion].password);
+          logIn(usuarios[posicion].nombre, usuarios[posicion].correo, usuarios[posicion].password,usuarios[posicion].rol);
           navigate("/");
           onClose();
         } else {
