@@ -24,6 +24,16 @@ function NavMenu({ onOpenCart, onOpenLogin }) {
         </Link>
       </li>
 
+      {/* Enlace a admin si el usuario logueado es administrador*/}
+
+      {(user.isLogin && user.rol === "admin") && (
+        <li>
+          <NavLink className="menu-link" to="admin" >
+            Admin
+          </NavLink>
+        </li>
+      )}
+
       {/* CARRITO */}
       <li>
         <button className="menu-btn" onClick={onOpenCart}>
@@ -31,16 +41,8 @@ function NavMenu({ onOpenCart, onOpenLogin }) {
         </button>
       </li>
 
-      {(user.isLogin && user.rol == "admin") && (
-        <li>
-          <button className="menu-btn" onClick={navigate("admin")}>
-            Admin
-          </button>
-        </li>
-      )}
-
       {/* LOGIN */}
-      {/* Modificación: se muestra Cerrar sesión si no esta logueado */}
+
       <li>
         {
           user.isLogin ? (
