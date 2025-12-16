@@ -7,7 +7,7 @@ function AdminRoute({children}) {
     const {user} = useContext(UserContext);
 
     const isAdmin = () =>{
-        if (user.isLogin && user.rol === "admin"){
+        if (user.isLogin == true && user.rol == "admin"){
             return true
         }else{
             return false

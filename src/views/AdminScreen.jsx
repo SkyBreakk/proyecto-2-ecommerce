@@ -3,6 +3,7 @@ import ListarUsuarios from "../components/ListarUsuarios"
 import "../assets/css/AdminScreen.css"
 
 function AdminScreen() {
+    
     const [usuarios, setUsuarios] = useState(
         JSON.parse(localStorage.getItem("usuarios")) || []);
 
