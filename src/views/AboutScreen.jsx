@@ -2,9 +2,9 @@ import "../assets/css/about.css";
 
 // IMPORT DE IMÁGENES
 import rubenImg from "../assets/img/about/ruben.jpg";
-import int2Img from "../assets/img/about/integrante2.jpg";
-import int3Img from "../assets/img/about/integrante3.jpg";
-import int4Img from "../assets/img/about/integrante4.jpg";
+import int2Img from "../assets/img/about/samuel.jpg";
+import int3Img from "../assets/img/about/maria.jpg";
+import int4Img from "../assets/img/about/pablo.jpg";
 
 function AboutScreen() {
   return (
@@ -33,54 +33,120 @@ function AboutScreen() {
 
         {/* INTEGRANTE 1 */}
         <div className="col-md-3 col-sm-6 team-card">
-          <div className="team-box">
-            <img src={rubenImg} alt="Ruben López" className="team-photo" />
-            <h4>Ruben López</h4>
-            <span>Frontend Developer</span>
-            <p>
-              Encargado del diseño de interfaces, experiencia de usuario y
-              estructura visual del proyecto.
-            </p>
-          </div>
+        <div div className="team-box">
+
+        <img
+        src={rubenImg}
+        alt="Ruben López"
+        className="team-photo"
+        />
+
+        <h4>Ruben López</h4>
+        <span className="team-role">
+      Scrum Master · Frontend Developer
+        </span>
+
+        
+
+        <div className="team-contribution">
+        <span>Mi aporte fue:</span>
+        <ul>
+            <li>Scrum Master</li>
+            <li>Encargado del tabler de Trello</li>
+            <li>Navbar</li>
+            <li>Footer</li>
+            <li>Acerca de nosotros</li>
+            <li>...</li>
+        </ul>
         </div>
+
+        </div>
+        </div>
+
 
         {/* INTEGRANTE 2 */}
         <div className="col-md-3 col-sm-6 team-card">
-          <div className="team-box">
-            <img src={int2Img} alt="Integrante 2" className="team-photo" />
-            <h4>Integrante 2</h4>
-            <span>Backend Developer</span>
-            <p>
-              Responsable de la lógica del sistema, manejo de datos y
-              funcionamiento interno.
-            </p>
-          </div>
+        <div div className="team-box">
+
+        <img
+        src={samuelImg}
+        alt="Samuel Fernandez"
+        className="team-photo"
+        />
+
+        <h4>Samuel Fernandez</h4>
+        <span className="team-role">
+      Encargado Tecnico · Frontend Developer
+        </span>
+
+        <div className="team-contribution">
+        <span>Mi aporte fue:</span>
+        <ul>
+            <li>Encargado Tecnico</li>
+            <li>Maqueteador de la web</li>
+            <li>Pagina Principal</li>
+            <li>Buscador</li>
+            <li>...</li>
+        </ul>
+        </div>
+
+        </div>
         </div>
 
         {/* INTEGRANTE 3 */}
         <div className="col-md-3 col-sm-6 team-card">
-          <div className="team-box">
-            <img src={int3Img} alt="Integrante 3" className="team-photo" />
-            <h4>Integrante 3</h4>
-            <span>UX / UI Designer</span>
-            <p>
-              Aporta creatividad al proyecto, cuidando la estética y la
-              experiencia del usuario.
-            </p>
-          </div>
+        <div div className="team-box">
+
+        <img
+        src="https://content.nationalgeographic.com.es/medio/2022/12/12/mono-1_d1203896_221212160444_1280x720.jpg"
+        alt="Maria Morales"
+        className="team-photo"
+        />
+
+        <h4>Maria Morales</h4>
+        <span className="team-role">
+            Frontend Developer
+        </span>
+
+        <div className="team-contribution">
+        <span>Mi aporte fue:</span>
+        <ul>
+            <li>Pagina Error 404</li>
+            <li>Pagina de contacto</li>
+            <li>...</li>
+        </ul>
+        </div>
+
+        </div>
         </div>
 
         {/* INTEGRANTE 4 */}
         <div className="col-md-3 col-sm-6 team-card">
-          <div className="team-box">
-            <img src={int4Img} alt="Integrante 4" className="team-photo" />
-            <h4>Integrante 4</h4>
-            <span>QA & Gestión</span>
-            <p>
-              Se encarga de las pruebas, control de calidad y organización del
-              proyecto.
-            </p>
-          </div>
+        <div div className="team-box">
+
+        <img
+        src="https://monkeyworlds.com/wp-content/uploads/human-monkey.webp"
+        alt="Pablo Padilla"
+        className="team-photo"
+        />
+
+        <h4>Pablo Padilla</h4>
+        <span className="team-role">
+        Frontend Developer
+        </span>
+
+
+        <div className="team-contribution">
+        <span>Mi aporte fue:</span>
+        <ul>
+            <li>Login</li>
+            <li>Logout</li>
+            <li>Register</li>
+            <li>...</li>
+        </ul>
+        </div>
+
+        </div>
         </div>
 
       </section>
