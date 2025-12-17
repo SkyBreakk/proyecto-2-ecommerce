@@ -1,11 +1,13 @@
 import { BrowserRouter } from "react-router-dom";
-import RoutesPrincipal from "./routes/RoutesPrincipal";
+// import RoutesPrincipal from "./routes/RoutesPrincipal";
 import "./assets/css/root.css";
+import AboutScreen from "./views/AboutScreen";
 
 function App() {
   return (
     <BrowserRouter>
-      <RoutesPrincipal />
+      {/* <RoutesPrincipal /> */}
+      <AboutScreen />
     </BrowserRouter>
   );
 }
