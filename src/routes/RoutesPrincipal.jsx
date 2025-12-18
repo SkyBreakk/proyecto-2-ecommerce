@@ -9,6 +9,7 @@ import AdminScreen from "../views/AdminScreen";
 import { UserContext } from "../context/UserContext";
 import AdminRoute from "./AdminRoute";
 import AboutScreen from "../views/AboutScreen";
+import ProductScreen from "../views/ProductScreen";
 
 const RoutesPrincipal = () => {
   const { user } = useContext(UserContext);
@@ -17,7 +18,8 @@ const RoutesPrincipal = () => {
     <Routes>
       <Route path="/" element={<PagesLayout />}>
         <Route index element={<HomeScreen />} />
-        <Route path="search" element={<SearchScreen />} />
+        <Route path="search/:query?" element={<SearchScreen />} />
+        <Route path="product/:id" element={<ProductScreen />} />
         <Route path="about" element={<AboutScreen />} />
         <Route path="register" element={<RegisterScreen />} />
         <Route

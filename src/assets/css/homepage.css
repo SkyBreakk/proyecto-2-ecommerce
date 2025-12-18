@@ -80,6 +80,8 @@
   background-color: var(--bg-card);
   text-wrap: wrap;
   transition: ease-in 0.15s;
+  text-decoration: none;
+  color: black;
 
   &:hover {
     transform: scale(1.1);

@@ -1,11 +1,22 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 function SearchBar() {
   const [query, setQuery] = useState("");
+  const navigate = useNavigate();
+
+  const manejarBusqueda = (e) => {
+    e.preventDefault();
+    navigate(`/search/${query}`);
+  };
 
   return (
-    <div className="search-container d-flex">
+    <form
+      className="search-container d-flex"
+      onSubmit={manejarBusqueda}
+      id="search"
+    >
       <input
         type="text"
         className="form-control search-input"
@@ -17,7 +28,7 @@ function SearchBar() {
       <button className="btn search-btn">
         <i className="bi bi-search"></i>
       </button>
-    </div>
+    </form>
   );
 }
 
