@@ -1,16 +1,22 @@
 import { useState, useEffect } from "react";
 import ListarUsuarios from "../components/ListarUsuarios";
 import "../assets/css/AdminScreen.css";
+import ListaProductos from "../data/productos.json";
+import ProductoEnLista from "../components/ProductoEnLista";
 
 function AdminScreen() {
+
+  // Carga de usuarios en la variable de estado
   const [usuarios, setUsuarios] = useState(
     JSON.parse(localStorage.getItem("usuarios")) || []
   );
 
+  // Carga de usuarios en el LocaleStorage
   useEffect(() => {
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
   }, [usuarios]);
 
+  // Borrado de usuario
   function borrarUsuario(correo) {
     setUsuarios(
       usuarios.filter((usuario) => {
@@ -19,14 +25,34 @@ function AdminScreen() {
     );
   }
 
-  //usuarios.map((usuario, index) => (
-  //    <ListarUsuarios usuario={usuario} key={index} borrarUsuario={borrarUsuario} />
-  //))
+  // Carga de productos en la variable de estado
+  const [tablaProductos, setTablaProductos] = useState(
+    JSON.parse(localStorage.getItem("productos")) || ListaProductos);
+
+  // Carga de productos en el LocaleStorage
+  useEffect(() => {
+    localStorage.setItem("productos", JSON.stringify(tablaProductos));
+  }, [tablaProductos]);
+
+  function borrarProducto(id) {
+    setTablaProductos(tablaProductos.filter((producto) => {
+      return producto.id != id;
+    }));
+  }
+
+  function editarProducto(){
+    
+  }
+
+  function cargarProducto(){
+
+  }
 
   return (
     <>
       <section className="container-fluid admin-box">
-        <div className="row vh-100 align-items-center">
+
+        <div className="row align-items-center py-3">
           <div className="col-12 col-md-6 offset-md-3 p-3 admin-contenedor rounded">
             <div className="text-center mb-3">
               <h1>Usuarios registrados</h1>
@@ -51,9 +77,47 @@ function AdminScreen() {
             </table>
           </div>
         </div>
+
+        <div className="row align-items-center py-3">
+          <div className="col-12 col-md-6 offset-md-3 p-3 admin-contenedor rounded">
+            <div className="text-center mb-3">
+              <h1>Productos registrados</h1>
+            </div>
+            <div className="d-grid my-3">
+              <button className="btn admin-boton-agregar py-2 fs-6">
+                Agregar Producto
+              </button>
+            </div>
+            <table className="table table-striped table-light">
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>Categoría</th>
+                  <th>Precio</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  tablaProductos.map((producto, index) => {
+                    return (
+                      <ProductoEnLista key={index} producto={producto}
+                      borrarProducto={ () => borrarProducto(producto.id) }
+                      />
+                    )
+                  })
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+
       </section>
     </>
   );
 }
 
 export default AdminScreen;
+
+
+

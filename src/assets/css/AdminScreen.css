@@ -1,19 +1,42 @@
 @import "./root.css";
 
+/*Fondo*/
 .admin-box {
   background-color: var(--bg-main);
 }
 
+/*Contenedor de tablas*/
 .admin-contenedor {
   background-color: var(--color-base-300);
 }
 
-.admin-boton {
+/*Borrar usuario*/
+.admin-borrar-usuario {
   background-color: var(--error-text);
   color: var(--color-base-100);
 }
-
-.admin-boton:hover {
+.admin-borrar-usuario:hover {
   border-color: var(--error-text);
   color: var(--error-text);
 }
+
+/*Editar producto*/
+.admin-editar-producto{
+  background-color: var(--color-base-450);
+  color: var(--color-base-100);
+}
+.admin-editar-producto:hover{
+  border-color: var(--color-base-450);
+  color: var(--color-base-450);
+}
+
+/*Borrar producto*/
+.admin-borrar-producto{
+  background-color: var(--error-text);
+  color: var(--color-base-100);
+}
+.admin-borrar-producto:hover{
+  border-color: var(--error-text);
+  color: var(--error-text);
+}
+

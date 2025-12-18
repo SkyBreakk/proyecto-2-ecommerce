@@ -1,14 +1,20 @@
-import "../assets/css/AdminScreen.css"
 
-function ListarUsuarios({ usuario,borrarUsuario }) {
+function ListarUsuarios({ usuario, borrarUsuario }) {
+
+    let validate;
+    if (usuario.rol === "admin") {
+        validate = true;
+    } else {
+        validate = false;
+    }
 
     return <tr>
         <td>{usuario.nombre}</td>
         <td>{usuario.correo}</td>
         <td>
-            <button className="btn admin-boton btn-sm" 
-            onClick={ () => borrarUsuario(usuario.correo) }
-            type="button">Borrar</button>
+            <button className="btn admin-borrar-usuario btn-sm"
+                onClick={() => borrarUsuario(usuario.correo)}
+                type="button" disabled={validate}>Borrar</button>
         </td>
     </tr>
 }
