@@ -3,23 +3,34 @@ import { useForm } from "react-hook-form";
 
 function MostrarProductoModal({ producto, mostrarProducto, setMostrarProducto }) {
 
+    // Variables de estado para los mensajes de error 
     const [mensajeNombre, setMensajeNombre] = useState(false);
     const [mensajePrecio, setMensajePrecio] = useState(false);
     const [mensajeCategoria, setMensajeCategoria] = useState(false);
 
+    // declaracion de propiedades del useForm
     const { register, handleSubmit, formState: { errors } } = useForm();
+    
+    // función de submit del form
     const confirmarGuardar = (data) => {
-        if (data.nombre = "") {
+        if (data.nombre == "") {
             setMensajeNombre(true);
-        }
-        if (data.precio = "") {
-            setMensajePrecio(true);
-        }
-        if (data.categoria = "") {
-            setMensajeCategoria(true);
-        }
-        if (mensajeNombre == false && mensajePrecio == false && mensajeCategoria == false) {
-
+        } else {
+            setMensajeNombre(false);
+            
+            if (data.precio == "") {
+                setMensajePrecio(true);
+            } else {
+                setMensajePrecio(false);
+                
+                if (data.categoria == "") {
+                    setMensajeCategoria(true);
+                } else {
+                    setMensajeCategoria(false);
+                
+                    
+                }
+            }
         }
     }
 

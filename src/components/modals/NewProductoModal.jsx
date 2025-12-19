@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form"
 
 function NewProductModal({ show, onClose }) {
 
+    // Declaración de propiedades de useForm
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const [image, setImage] = useState("");
@@ -21,37 +22,37 @@ function NewProductModal({ show, onClose }) {
         return null
     }
     else {
-        return <div className="Nuevo-producto-fondo">
-            <div className="Nuevo-producto-contenedor">
+        return <div className="modal-nuevo-producto">
+            <div className="ventana-nuevo-producto row p-3">
                 <form onSubmit={handleSubmit(cargarProducto)} noValidate>
-                    <div className="">
-                        <label className="form-text">Nombre</label>
+                    <div className="col-12 my-2">
+                        <label className="form-label">Nombre</label>
                         <input className="form-control" id="nombre"
                             {...register("nombre", { required: "Este campo es obligatorio" })} ></input>
                     </div>
-                    <div className="">
-                        <label className="form-text">Categoría</label>
+                    <div className="col-12 my-2">
+                        <label className="form-label">Categoría</label>
                         <input className="form-control" id="categoria"
                             {...register("categoria", { required: "Este campo es obligatorio" })} ></input>
                     </div>
-                    <div className="">
-                        <label className="form-text">Precio</label>
+                    <div className="col-12 my-2">
+                        <label className="form-label">Precio</label>
                         <input className="form-control" id="precio"
                             {...register("precio", { required: "Este campo es obligatorio" })} ></input>
                     </div>
-                    <div className="">
-                        <label className="form-text">Descripción</label>
+                    <div className="col-12 my-2">
+                        <label className="form-label">Descripción</label>
                         <input className="form-control" id="descripcion" {...register("descripcion")} ></input>
                     </div>
-                    <div className="">
-                        <label className="form-text">Url de Imagen</label>
+                    <div className="col-12 my-2">
+                        <label className="form-label">Url de Imagen</label>
                         <input className="form-control" id="imagen" {...register("imagen")}
                             onChange={setProductImage}></input>
                         <img src={image} alt="imagen_de_producto" />
                     </div>
-                    <div className="d-flex Nuevo-producto-footer gap-2 justify-content-end">
-                        <button type="submit">Crear Producto</button>
-                        <button type="button" onClick={onClose}>Cancelar</button>
+                    <div className="col-12 d-flex gap-2 justify-content-end my-2">
+                        <button className="aceptar-nuevo-producto" type="submit">Crear Producto</button>
+                        <button className="cancelar-nuevo-producto" type="button" onClick={onClose}>Cancelar</button>
                     </div>
                 </form>
             </div>
