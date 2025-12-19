@@ -3,6 +3,7 @@ import ListarUsuarios from "../components/ListarUsuarios";
 import "../assets/css/AdminScreen.css";
 import ListaProductos from "../data/productos.json";
 import ProductoEnLista from "../components/ProductoEnLista";
+import NewProductModal from "../components/modals/NewProductoModal";
 
 function AdminScreen() {
 
@@ -24,7 +25,7 @@ function AdminScreen() {
       })
     );
   }
-
+  
   // Carga de productos en la variable de estado
   const [tablaProductos, setTablaProductos] = useState(
     JSON.parse(localStorage.getItem("productos")) || ListaProductos);
@@ -34,17 +35,20 @@ function AdminScreen() {
     localStorage.setItem("productos", JSON.stringify(tablaProductos));
   }, [tablaProductos]);
 
+  // Borrado de producto
   function borrarProducto(id) {
     setTablaProductos(tablaProductos.filter((producto) => {
       return producto.id != id;
     }));
   }
 
-  function editarProducto(){
-    
+  const [nuevoProducto, setNuevoProducto] = useState(false);
+
+  function editarProducto() {
+
   }
 
-  function cargarProducto(){
+  function cargarProducto() {
 
   }
 
@@ -70,7 +74,7 @@ function AdminScreen() {
                   <ListarUsuarios
                     usuario={usuario}
                     key={index}
-                    borrarUsuario={borrarUsuario}
+                    borrarUsuario={() => borrarUsuario(usuario.correo)}
                   />
                 ))}
               </tbody>
@@ -84,10 +88,12 @@ function AdminScreen() {
               <h1>Productos registrados</h1>
             </div>
             <div className="d-grid my-3">
-              <button className="btn admin-boton-agregar py-2 fs-6">
+              <button className="btn admin-nuevo-producto py-2 fs-6"
+                onClick={() => setNuevoProducto(true)}>
                 Agregar Producto
               </button>
             </div>
+            <NewProductModal show={nuevoProducto} onClose={() => setNuevoProducto(false)} />
             <table className="table table-striped table-light">
               <thead>
                 <tr>
@@ -102,7 +108,7 @@ function AdminScreen() {
                   tablaProductos.map((producto, index) => {
                     return (
                       <ProductoEnLista key={index} producto={producto}
-                      borrarProducto={ () => borrarProducto(producto.id) }
+                        borrarProducto={() => borrarProducto(producto.id)}
                       />
                     )
                   })
