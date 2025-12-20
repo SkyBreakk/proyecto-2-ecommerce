@@ -1,8 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
+import { useCart } from "../../context/CartContext";
+
 
 function MobileMenu({ onOpenCart, onOpenLogin }) {
+  const { totalItems } = useCart();
+
 
   const navigate = useNavigate();
 
@@ -20,9 +24,19 @@ function MobileMenu({ onOpenCart, onOpenLogin }) {
         <i className="bi bi-house"></i> Inicio
       </Link>
 
-      <button className="menu-btn" onClick={onOpenCart}>
-        <i className="bi bi-cart"></i> Carrito
-      </button>
+      <button
+  className="menu-btn position-relative"
+  onClick={onOpenCart}
+>
+  <i className="bi bi-cart"></i> Carrito
+
+  {totalItems > 0 && (
+    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+      {totalItems}
+    </span>
+  )}
+</button>
+
 
       {
         user.isLogin ? (

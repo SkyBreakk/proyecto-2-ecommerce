@@ -1,7 +1,19 @@
+import React, { useState } from "react";
 import { useCart } from "../../context/CartContext";
+import Toast from "../ui/Toast"; // ajustá ruta si cambia
 
 const SearchProductCard = ({ producto }) => {
   const { addToCart } = useCart();
+
+  const [showToast, setShowToast] = useState(false);
+
+  const handleAdd = () => {
+    addToCart(producto);
+
+    // mostrar toast 1.2s
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 1200);
+  };
 
   const {
     title: titulo,
@@ -12,34 +24,47 @@ const SearchProductCard = ({ producto }) => {
   } = producto;
 
   return (
-    <div className="col-8 col-sm-6 col-md-4 col-xxl-3 d-flex flex-column">
-      <div className="tarjeta-producto mx-3 d-flex flex-column justify-content-around">
+    <>
+      <div className="col-8 col-sm-6 col-md-4 col-xxl-3 d-flex flex-column">
+        <div className="tarjeta-producto mx-3 d-flex flex-column align-self-center justify-content-around">
+          <div className="row">
+            <img src={imagen} alt={titulo} />
+          </div>
 
-        <img src={imagen} alt={titulo} />
+          <div className="row">
+            <h4 className="text-center">{titulo}</h4>
+          </div>
 
-        <h4 className="text-center">{titulo}</h4>
-        <p className="text-center small">{categoria}</p>
+          <div className="row justify-content-around">
+            <p className="col text-center small">{categoria}</p>
+          </div>
 
-        <div className="row">
-          <p className="col text-center">⭐ {estrellas}</p>
-          <p className="col text-center">${precio}</p>
-        </div>
+          <div className="row row-cols-2">
+            <p className="col-5 text-center">⭐{estrellas}</p>
+            <p className="col-7 text-center">${precio}</p>
+          </div>
 
-        <div className="d-flex justify-content-around mb-2">
-          {/* 🛒 AGREGAR AL CARRITO */}
-          <button
-            className="btn btn-success"
-            onClick={() => addToCart(producto)}
-          >
-            <i className="bi bi-cart-plus"></i>
-          </button>
+          <div className="row">
+            <div className="d-flex justify-content-around mb-1">
+              <button
+                type="button"
+                className="btn btn-success"
+                onClick={handleAdd}
+              >
+                <i className="bi bi-cart-plus"></i>
+              </button>
 
-          <button className="btn btn-outline-secondary">
-            Ver Más
-          </button>
+              <button type="button" className="btn btn-outline-secondary">
+                Ver Más
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+
+      {/* Toast */}
+      <Toast show={showToast} message="✅ Agregado al carrito" />
+    </>
   );
 };
 
