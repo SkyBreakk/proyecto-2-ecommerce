@@ -11,15 +11,19 @@ function LoginModal({ open, onClose }) {
 
   // Declaracion del Navigate
   const navigate = useNavigate();
+
   // Declaracion de los componentes del useForm para usarlos en los inputs
   const { register, handleSubmit, formState: { errors } } = useForm();
+
   // Desestructuración en los datos del contexto
   const { logIn, logOut } = useContext(UserContext);
-  // Se cargan los usuarios desde el LocaleStorage
-  // const [usuarios, setUsuarios] = useState(JSON.parse(localStorage.getItem("usuarios")) || []);
+
+  // Se cargan los usuarios desde el LocalStorage
   const usuarios = (JSON.parse(localStorage.getItem("usuarios")) || []);
+
   // variable de estado usada para el mensaje de cuenta no encontrada
   const [mensaje, setMensaje] = useState(false);
+  
   // variable de estado para el mensaje de contraseña incorrecta
   const [mensajePass, setMensajePass] = useState(false);
 

@@ -1,20 +1,28 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const UserContext = createContext(null);
 
 export function UserProvider({ children }) {
 
+  // Declaro los valores inciales para el contexto
   const initialValue = {
     nombre: "",
     correo: "",
     password: "",
     rol: "",
     isLogin: false
-  } ;
+  };
 
-  const [user, setUser] = useState(initialValue);
+  // Declaración del contexto
+  const [user, setUser] = useState( JSON.parse(localStorage.getItem("userLogIn")) || initialValue );
 
-  const logIn = (nombre,correo,password,rol) => {
+  // Se guarda en el localStorage la sesion abierta
+  useEffect( () => {
+    localStorage.setItem("userLogIn",JSON.stringify(user));
+  }, [user] );
+
+  // Función de abrir sesión
+  const logIn = (nombre, correo, password, rol) => {
     setUser({
       nombre,
       correo,
@@ -24,14 +32,16 @@ export function UserProvider({ children }) {
     });
   }
 
+  // Función para cerrar sesión
   const logOut = () => {
     setUser(initialValue);
+    localStorage.removeItem("userLogIn");
   };
 
   const datos = { user, logIn, logOut };
 
   return <UserContext.Provider value={datos}>
-      {children}
-    </UserContext.Provider>
-    
+    {children}
+  </UserContext.Provider>
+
 };
