@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import Toast from "../ui/Toast"; // ajustá ruta si cambia
 
@@ -16,6 +17,7 @@ const SearchProductCard = ({ producto }) => {
   };
 
   const {
+    id,
     title: titulo,
     price: precio,
     category: categoria,
@@ -54,9 +56,13 @@ const SearchProductCard = ({ producto }) => {
                 <i className="bi bi-cart-plus"></i>
               </button>
 
-              <button type="button" className="btn btn-outline-secondary">
+              <Link
+                type="button"
+                className="btn btn-outline-secondary"
+                to={`/product/${id}`}
+              >
                 Ver Más
-              </button>
+              </Link>
             </div>
           </div>
         </div>

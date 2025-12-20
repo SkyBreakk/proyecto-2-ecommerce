@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ producto }) => {
   const {
+    id,
     title: titulo,
     price: precio,
     category: categoria,
@@ -11,7 +13,10 @@ const ProductCard = ({ producto }) => {
 
   return (
     <div className="col">
-      <div className="tarjeta-producto mx-3 d-flex flex-column justify-content-around">
+      <Link
+        className="tarjeta-producto mx-3 d-flex flex-column justify-content-around"
+        to={`/product/${id}`}
+      >
         {/* Imagen */}
         <div className="row">
           <img src={imagen} alt={titulo} />
@@ -29,7 +34,7 @@ const ProductCard = ({ producto }) => {
           <p className="col-5 text-center">⭐{estrellas}</p>
           <p className="col-7 text-center">${precio}</p>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
