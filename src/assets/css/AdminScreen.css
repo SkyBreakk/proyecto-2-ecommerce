@@ -168,6 +168,11 @@
 .ventana-editar-producto {
   background-color: var(--color-base-200);
   animation: animacion-modal-editar 0.25s ease;
+  max-width: 1000px;
+  max-height: 800px;
+  overflow-y: auto;
+  scrollbar-color: var(--color-base-100) var(--color-base-200);
+  scrollbar-width: thin;
 }
 
 @keyframes animacion-modal-editar {
@@ -180,6 +185,12 @@
     transform: scale(1);
     opacity: 1;
   }
+}
+
+.imagen-editar-producto img{
+  height: auto;
+  width: 300px;
+  background-color: var(--color-base-100);
 }
 
 .boton-aceptar-editar {

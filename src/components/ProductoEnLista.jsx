@@ -14,11 +14,11 @@ function ProductoEnLista({ producto, borrarProducto }) {
             <div className="container d-flex align-items-center gap-2">
                 <button className="btn admin-editar-producto btn-sm"
                     onClick={() => { setMostrarProducto(true) }}>
-                    <i class="bi bi-pencil-square"></i>
+                    <i className="bi bi-pencil-square"></i>
                 </button>
                 <button className="btn admin-borrar-producto btn-sm"
                     onClick={() => { setMostrarModal(true) }}>
-                    <i class="bi bi-x-lg"></i>
+                    <i className="bi bi-x-lg"></i>
                 </button>
                 <DeleteProductModal producto={producto} mostrarModal={mostrarModal}
                     setMostrarModal={() => setMostrarModal(false)}

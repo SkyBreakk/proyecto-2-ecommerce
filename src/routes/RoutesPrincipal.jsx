@@ -9,7 +9,6 @@ import AdminScreen from "../views/AdminScreen";
 import { UserContext } from "../context/UserContext";
 import AdminRoute from "./AdminRoute";
 import AboutScreen from "../views/AboutScreen";
-import { EditProductsContext } from "../context/EditProductsContext";
 
 const RoutesPrincipal = () => {
   const { user } = useContext(UserContext);
@@ -25,9 +24,7 @@ const RoutesPrincipal = () => {
           path="admin"
           element={
             <AdminRoute>
-              <EditProductsContext.Provider>
                 <AdminScreen />
-              </EditProductsContext.Provider>
             </AdminRoute>
           }
         />

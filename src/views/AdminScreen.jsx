@@ -25,7 +25,7 @@ function AdminScreen() {
       })
     );
   }
-  
+
   // Carga de productos en la variable de estado
   const [tablaProductos, setTablaProductos] = useState(
     JSON.parse(localStorage.getItem("productos")) || ListaProductos);
@@ -42,15 +42,21 @@ function AdminScreen() {
     }));
   }
 
+  // Cargar producto nuevo en la variable de estado
+  function cargarProducto(nuevoDato) {
+
+    const banderaAux = tablaProductos.findIndex((auxProducto) => {
+      return auxProducto.id == nuevoDato.id
+    });
+
+    if (banderaAux == -1) {
+      nuevoDato.id = tablaProductos[tablaProductos.length - 1].id + 1;
+    }
+    setTablaProductos([...tablaProductos, nuevoDato]);
+  }
+
+  // Variable de estado para mostrar el modal de nuevo producto
   const [nuevoProducto, setNuevoProducto] = useState(false);
-
-  function editarProducto() {
-
-  }
-
-  function cargarProducto() {
-
-  }
 
   return (
     <>
@@ -93,7 +99,11 @@ function AdminScreen() {
                 Agregar Producto
               </button>
             </div>
-            <NewProductModal show={nuevoProducto} onClose={() => setNuevoProducto(false)} />
+            <NewProductModal show={nuevoProducto}
+              onClose={() => setNuevoProducto(false)}
+              enviarDatos={cargarProducto}
+              cantidad={tablaProductos.length}
+            />
             <table className="table table-striped table-light">
               <thead>
                 <tr>

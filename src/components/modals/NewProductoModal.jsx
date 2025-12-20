@@ -1,66 +1,88 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form"
 
-function NewProductModal({ show, onClose }) {
+function NewProductModal({ show, onClose, enviarDatos, cantidad }) {
 
     // Declaración de propiedades de useForm
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const [image, setImage] = useState("");
+    // Variable de estado para el nuevo producto
+    const [nuevoProducto, setNuevoProducto] = useState(false);
 
-    const setProductImage = (e) => {
-        setImage(e.target.value);
-    }
+    useEffect(() => {
+        if(nuevoProducto){
+            enviarDatos(nuevoProducto);
+        }
+    },[nuevoProducto]);
 
-    const [mensaje, setMensaje] = useState(false);
-
+    // Función en HandleSubmit para enviar datos del nuevo producto
     const cargarProducto = (data) => {
-        onClose();
+        if (data.nombre != "" && data.categoria != "" && data.precio != "") {
+            setNuevoProducto({
+                id: cantidad,
+                title: data.nombre,
+                price: data.precio,
+                description: data.descripcion,
+                category: data.categoria,
+                image: data.imagen,
+                rating: {
+                    rate: 0,
+                    count: 0
+                }
+            });
+            onClose();
+        }
     }
 
     if (!show) {
         return null
     }
-    else {
-        return <div className="modal-nuevo-producto">
-            <div className="ventana-nuevo-producto row p-3 rounded">
-                <form onSubmit={handleSubmit(cargarProducto)} noValidate>
-                    <div className="col-12 my-2">
-                        <div className="row">
-                            <div className="col-12 col-md-6" >
-                                <label className="form-label">Nombre</label>
-                                <input className="form-control" id="nombre"
-                                    {...register("nombre", { required: "Este campo es obligatorio" })} />
-                            </div>
-                            <div className="col-12 col-md-6" >
-                                <label className="form-label">Categoría</label>
-                                <input className="form-control" id="categoria"
-                                    {...register("categoria", { required: "Este campo es obligatorio" })} />
-                            </div>
+
+    return <div className="modal-nuevo-producto">
+        <div className="ventana-nuevo-producto row p-3 rounded">
+            <form onSubmit={handleSubmit(cargarProducto)} noValidate>
+                <div className="col-12 my-2">
+                    <div className="row">
+                        <div className="col-12 col-md-6" >
+                            <label className="form-label">Nombre</label>
+                            <input className="form-control"
+                                {...register("nombre", { required: "Este campo es obligatorio" })} />
+                            {errors.nombre && (<p className="text-danger">{errors.nombre.message}</p>)}
+                        </div>
+                        <div className="col-12 col-md-6" >
+                            <label className="form-label">Categoría</label>
+                            <input className="form-control"
+                                {...register("categoria", { required: "Este campo es obligatorio" })} />
+                            {errors.categoria && (<p className="text-danger">{errors.categoria.message}</p>)}
                         </div>
                     </div>
-                    <div className="col-12 my-2">
-                        <label className="form-label">Precio</label>
-                        <input className="form-control" id="precio"
-                            {...register("precio", { required: "Este campo es obligatorio" })} />
-                    </div>
-                    <div className="col-12 my-2">
-                        <label className="form-label">Descripción</label>
-                        <textarea className="form-control" id="descripcion" {...register("descripcion")} />
-                    </div>
-                    <div className="col-12 my-2">
-                        <label className="form-label">Url de Imagen</label>
-                        <input className="form-control" id="imagen" {...register("imagen")}
-                            onChange={setProductImage} />
-                        <img src={image} alt="imagen_de_producto" />
-                    </div>
-                    <div className="col-12 d-flex gap-2 justify-content-end my-2">
-                        <button className="aceptar-nuevo-producto p-2" type="submit">Crear Producto</button>
-                        <button className="cancelar-nuevo-producto p-2" type="button" onClick={onClose}>Cancelar</button>
-                    </div>
-                </form>
-            </div>
+                </div>
+                <div className="col-12 my-2">
+                    <label className="form-label">Precio</label>
+                    <input className="form-control"
+                        {...register("precio", {
+                            required: "Este campo es obligatorio", pattern: {
+                                value: /^[0-9.,]+$/,
+                                message: "El precio ingresado no es valido"
+                            },
+                        })} />
+                    {errors.precio && (<p className="text-danger">{errors.precio.message}</p>)}
+                </div>
+                <div className="col-12 my-2">
+                    <label className="form-label">Descripción</label>
+                    <textarea className="form-control" {...register("descripcion")} />
+                </div>
+                <div className="col-12 my-2">
+                    <label className="form-label">Url de Imagen</label>
+                    <input className="form-control" {...register("imagen")} />
+                </div>
+                <div className="col-12 d-flex gap-2 justify-content-end my-2">
+                    <button className="aceptar-nuevo-producto p-2" type="submit">Crear Producto</button>
+                    <button className="cancelar-nuevo-producto p-2" type="button" onClick={onClose}>Cancelar</button>
+                </div>
+            </form>
         </div>
-    }
+    </div>
+
 }
 export default NewProductModal
