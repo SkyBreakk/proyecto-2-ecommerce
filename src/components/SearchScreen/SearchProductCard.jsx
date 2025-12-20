@@ -1,6 +1,8 @@
-import React from "react";
+import { useCart } from "../../context/CartContext";
 
 const SearchProductCard = ({ producto }) => {
+  const { addToCart } = useCart();
+
   const {
     title: titulo,
     price: precio,
@@ -11,35 +13,30 @@ const SearchProductCard = ({ producto }) => {
 
   return (
     <div className="col-8 col-sm-6 col-md-4 col-xxl-3 d-flex flex-column">
-      <div className="tarjeta-producto mx-3 d-flex flex-column align-self-center justify-content-around">
-        {/* Imagen */}
+      <div className="tarjeta-producto mx-3 d-flex flex-column justify-content-around">
+
+        <img src={imagen} alt={titulo} />
+
+        <h4 className="text-center">{titulo}</h4>
+        <p className="text-center small">{categoria}</p>
+
         <div className="row">
-          <img src={imagen} alt={titulo} />
+          <p className="col text-center">⭐ {estrellas}</p>
+          <p className="col text-center">${precio}</p>
         </div>
-        {/* Nombre del producto */}
-        <div className="row">
-          <h4 className="text-center">{titulo}</h4>
-        </div>
-        {/* La categoría */}
-        <div className="row justify-content-around">
-          <p className="col text-center small">{categoria}</p>
-        </div>
-        {/* Rating y precio */}
-        <div className="row row-cols-2">
-          <p className="col-5 text-center">⭐{estrellas}</p>
-          <p className="col-7 text-center">${precio}</p>
-        </div>
-        <div className="row">
-          <div className="div d-flex justify-content-around mb-1">
-            {/* Botón Añadir Carrito */}
-            <button type="button" className="btn btn-success">
-              <i className="bi bi-cart-plus"></i>
-            </button>
-            {/* Botón ver detalles del producto */}
-            <button type="button" className="btn btn-outline-secondary">
-              Ver Más
-            </button>
-          </div>
+
+        <div className="d-flex justify-content-around mb-2">
+          {/* 🛒 AGREGAR AL CARRITO */}
+          <button
+            className="btn btn-success"
+            onClick={() => addToCart(producto)}
+          >
+            <i className="bi bi-cart-plus"></i>
+          </button>
+
+          <button className="btn btn-outline-secondary">
+            Ver Más
+          </button>
         </div>
       </div>
     </div>
