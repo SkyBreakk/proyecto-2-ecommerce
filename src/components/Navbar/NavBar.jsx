@@ -7,6 +7,7 @@ import MobileToggle from "./MobileToggle";
 import CartModal from "../modals/CartModal";
 import LoginModal from "../modals/LoginModal";
 
+
 function NavBar() {
 
   const [openCart, setOpenCart] = useState(false);

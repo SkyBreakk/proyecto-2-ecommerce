@@ -9,6 +9,7 @@ import AdminScreen from "../views/AdminScreen";
 import { UserContext } from "../context/UserContext";
 import AdminRoute from "./AdminRoute";
 import AboutScreen from "../views/AboutScreen";
+import Error404 from "../views/error404";
 
 const RoutesPrincipal = () => {
   const { user } = useContext(UserContext);
@@ -20,6 +21,7 @@ const RoutesPrincipal = () => {
         <Route path="search" element={<SearchScreen />} />
         <Route path="about" element={<AboutScreen />} />
         <Route path="register" element={<RegisterScreen />} />
+        <Route path="error404" element={<Error404 />} />
         <Route
           path="admin"
           element={
