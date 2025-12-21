@@ -3,7 +3,7 @@ import team from "../data/team";
 
 function AboutScreen() {
   return (
-    <div className="about-page container-lg">
+    <div className="about-page container-fluid">
       {/* HEADER */}
       <header className="about-header">
         <h1>Acerca de Nosotros</h1>

@@ -16,6 +16,7 @@ const team = [
       "Navbar",
       "Footer",
       "Acerca de nosotros",
+      "Carrito",
     ],
   },
   {
@@ -25,28 +26,23 @@ const team = [
     contributions: [
       "Encargado Técnico",
       "Maquetado de la web",
+      "Catálogo",
       "Página Principal",
       "Buscador",
+      "Página Producto",
     ],
   },
   {
     name: "Maria Morales",
     role: "Frontend Developer",
     img: mariaImg,
-    contributions: [
-      "Página Error 404",
-      "Página de Contacto",
-    ],
+    contributions: ["Tester", "Página Error 404", "Página de Contacto"],
   },
   {
     name: "Pablo Padilla",
     role: "Frontend Developer",
     img: pabloImg,
-    contributions: [
-      "Login",
-      "Logout",
-      "Register",
-    ],
+    contributions: ["Login", "Logout", "Register", "Página Admin"],
   },
 ];
 
