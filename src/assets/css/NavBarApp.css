@@ -1,0 +1,440 @@
+@import "./root.css";
+
+/* ===========================================================
+   NAVBAR GENERAL
+   =========================================================== */
+.navbar-app {
+  width: 100%;
+  padding: 10px 20px;
+  background: var(--gradient-primary);
+  box-shadow: var(--shadow-medium);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* ===========================================================
+   LOGO
+   =========================================================== */
+.navbar-left {
+  width: 180px; /* Ancho fijo como Mercado Libre */
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 60px;
+  width: 200px;
+  object-fit: contain;
+}
+
+/* ===========================================================
+   BUSCADOR (CENTRO)
+   =========================================================== */
+.navbar-center {
+  flex: 1; /* Ocupa el espacio central */
+  max-width: 650px; /* Evita que invada el menú */
+  display: flex;
+  justify-content: center;
+}
+
+.search-container {
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-light);
+
+  width: 100%;
+  padding: 0 6px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.search-input {
+  flex: 1;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+.search-btn {
+  background: var(--btn-primary);
+  color: var(--btn-primary-text);
+  border-radius: 6px;
+}
+
+.search-btn:hover {
+  background: var(--btn-hover);
+}
+
+/* ===========================================================
+   MENÚ DESKTOP (DERECHA)
+   =========================================================== */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  list-style: none;
+}
+
+.nav-menu a,
+.menu-btn {
+  color: var(--text-inverse);
+  font-weight: 500;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.menu-btn:hover,
+.nav-menu a:hover {
+  opacity: 0.8;
+}
+
+.nav-menu i {
+  font-size: 1.1rem;
+}
+
+/* ===========================================================
+   MOBILE
+   =========================================================== */
+@media (max-width: 768px) {
+  .navbar-left {
+    display: none !important; /* Oculta logo */
+  }
+
+  .navbar-right {
+    display: none !important; /* Oculta menú desktop */
+  }
+
+  .navbar-center {
+    max-width: 100%;
+  }
+}
+
+/* ===========================================================
+   BOTÓN MOBILE
+   =========================================================== */
+.navbar-mobile {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-btn {
+  background: var(--btn-secondary);
+  color: var(--btn-secondary-text);
+  border-radius: 6px;
+  padding: 6px 10px;
+  border: none;
+}
+
+.toggle-btn:hover {
+  background: var(--bg-hover);
+}
+
+/* ===========================================================
+   MENÚ MOBILE
+   =========================================================== */
+.mobile-menu {
+  position: absolute;
+  top: 65px;
+  right: 10px;
+  z-index: 800;
+
+  background: var(--bg-card);
+  padding: 12px 16px;
+  width: 180px;
+
+  border-radius: 12px;
+  border: 1px solid var(--border-card);
+  box-shadow: var(--shadow-hover);
+}
+
+.mobile-menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.mobile-menu li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.mobile-menu li i {
+  color: var(--text-main);
+}
+
+.mobile-menu li a {
+  color: var(--text-main);
+  text-decoration: none;
+}
+
+/* ===== FIX: colores correctos para el menú mobile ===== */
+.mobile-menu .menu-btn {
+  color: var(--text-main) !important;
+}
+
+.mobile-menu i {
+  color: var(--text-main) !important;
+}
+
+.mobile-menu a {
+  color: var(--text-main) !important;
+}
+
+.mobile-menu .menu-btn,
+.mobile-menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 6px 4px; /* ← padding uniforme */
+  width: 100%; /* ← que ocupe todo el ancho */
+  color: var(--text-main) !important;
+}
+
+/* ============================================================
+   MODAL - BACKDROP
+   ============================================================ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* ============================================================
+     MODAL - CONTENEDOR
+     ============================================================ */
+.modal-container {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 22px;
+  width: 380px;
+  max-width: 90%;
+  box-shadow: var(--shadow-hover);
+  border: 1px solid var(--border-light);
+
+  animation: modalFadeIn 0.25s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+     MODAL HEADER
+     ============================================================ */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-main);
+}
+
+.modal-close:hover {
+  opacity: 0.7;
+}
+
+/* ============================================================
+     MODAL BODY
+     ============================================================ */
+.modal-body {
+  margin-bottom: 14px;
+}
+
+.modal-form .form-group {
+  margin-bottom: 12px;
+}
+
+.modal-form label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.modal-form input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+}
+
+/* ============================================================
+     FOOTER
+     ============================================================ */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* BOTONES */
+.btn-primary {
+  background: var(--btn-primary);
+  color: var(--btn-primary-text);
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background: var(--btn-hover);
+}
+
+.btn-secondary {
+  background: var(--btn-secondary);
+  color: var(--btn-secondary-text);
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-hover);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+/* Agrandar modal */
+.modal-cart-lg {
+  width: min(92vw, 980px);
+  max-height: 85vh;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* Scroll interno */
+.modal-cart-body {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* Estilo items */
+.cart-item {
+  display: flex;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.cart-item-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-item-title {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.cart-item-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-qty {
+  min-width: 28px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.modal-cart-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-cart-lg {
+  width: min(92vw, 980px);
+  max-height: 85vh;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.modal-cart-body {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.toast-kboom {
+  position: fixed;
+  bottom: 20px;
+  right: 1px;
+  width: 100vw;
+  z-index: 9999;
+  background: rgba(25, 135, 84, 0.95); /* verde bootstrap */
+  color: white;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+

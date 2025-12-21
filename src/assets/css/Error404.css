@@ -1,0 +1,30 @@
+/* Fondo general */
+.error404 {
+    min-height: 100vh;
+    padding: 40px 0;
+    background: radial-gradient(circle at top, #f6f7fb 0%, #eef1f7 45%, #e9edf6 100%);
+  }
+  
+  /* Caja de imagen */
+  .error404-card {
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: #fff;
+  }
+  
+  /* Imagen responsive */
+  .error404-img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Ajustes para pantallas grandes */
+  @media (min-width: 992px) {
+    .error404-img {
+      height: 420px;
+    }
+  }
+  
