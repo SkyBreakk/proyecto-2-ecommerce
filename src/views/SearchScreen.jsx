@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import listaProductos from "../data/productos.json";
-import "../assets/css/searchscreen.css";
 import InputRadio from "../components/SearchScreen/InputRadio";
 import SearchProductCard from "../components/SearchScreen/SearchProductCard";
+import "../assets/css/searchscreen.css";
 
 const SearchScreen = () => {
   function conseguirProductos() {
@@ -10,6 +11,7 @@ const SearchScreen = () => {
     return productosGuardados ? JSON.parse(productosGuardados) : listaProductos;
   }
   const productos = conseguirProductos();
+
   const categorias = [
     "Todos",
     "Ropa de Hombre",
@@ -24,6 +26,13 @@ const SearchScreen = () => {
   const [precioMin, setPrecioMin] = useState("");
   const [precioMax, setPrecioMax] = useState("");
   const [filtroRating, setFiltroRating] = useState("");
+
+  const { query } = useParams();
+  useEffect(() => {
+    if (query) {
+      setTerminoBusqueda(query);
+    }
+  }, [query]);
 
   //Normalizar Término de Búsqueda
   const normalizarTexto = (texto) => {
@@ -87,6 +96,7 @@ const SearchScreen = () => {
                   type="text"
                   className="form-control"
                   placeholder="Ej: Camiseta de..."
+                  id="search-query"
                   value={terminoBusqueda}
                   onChange={(e) => setTerminoBusqueda(e.target.value)}
                 />
@@ -114,6 +124,7 @@ const SearchScreen = () => {
                   type="number"
                   className="form-control"
                   placeholder="Mínimo"
+                  id="min-price"
                   min={0}
                   value={precioMin}
                   onChange={(e) => setPrecioMin(e.target.value)}
@@ -123,6 +134,7 @@ const SearchScreen = () => {
                   type="number"
                   className="form-control"
                   placeholder="Máximo"
+                  id="max-price"
                   min={!precioMin ? 0 : precioMin}
                   value={precioMax}
                   onChange={(e) => setPrecioMax(e.target.value)}
@@ -137,6 +149,7 @@ const SearchScreen = () => {
                   type="number"
                   className="form-control"
                   placeholder="Mínimo"
+                  id="stars"
                   min={0}
                   max={5}
                   value={filtroRating}

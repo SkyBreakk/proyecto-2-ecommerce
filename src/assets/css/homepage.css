@@ -1,10 +1,5 @@
 .home-view {
-  background: linear-gradient(
-    to bottom,
-    var(--bg-main),
-    var(--bg-main),
-    var(--color-base-150)
-  );
+  background-color: var(--bg-main);
   min-height: 100vh;
 }
 
@@ -27,11 +22,15 @@
 .carousel-inner,
 .carousel-item {
   height: 100%;
+  border-radius: 30px;
+  & h2 {
+    color: var(--color-base-450);
+  }
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  filter: invert(100%); /* Changes white to black */
+  filter: invert(100%);
 }
 
 .logo-box {
@@ -45,11 +44,10 @@
   }
 }
 
-.producto1 {
+.carousel-1 {
   background-color: var(--success);
 }
-
-.producto2 {
+.carousel-2 {
   background-color: var(--warning);
 }
 
@@ -57,6 +55,7 @@
 .producto2 {
   border-radius: 1.2rem;
   transition: ease-in 0.15s;
+  background-color: white;
   & .imagen {
     width: 300px;
     height: 30vh;
@@ -80,6 +79,8 @@
   background-color: var(--bg-card);
   text-wrap: wrap;
   transition: ease-in 0.15s;
+  text-decoration: none;
+  color: black;
 
   &:hover {
     transform: scale(1.1);

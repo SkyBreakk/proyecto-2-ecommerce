@@ -1,18 +1,78 @@
-# React + Vite
+# Comercio Libre
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Comercio Libre es una página de E-Commerce que busca dar una experience de compra responsiva y fluida, creada con React para la lógica, y Bootstrap para el diseño adaptable.
 
-Currently, two official plugins are available:
+Este proyecto fue creado para el curso web17 de RollingCode School.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Características
 
-## React Compiler
+- **Catálogo de Productos**: Un catálogo variado, con función de filtrado.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **Detalle de Productos**: Vista individuales con descripciones técnicas y precios.
 
-Note: This will impact Vite dev & build performances.
+- **Registro y Login**: Diferenciación entre invitados y administradores a la hora de iniciar sesión.
 
-## Expanding the ESLint configuration
+- **Carrito de Compra**: Capacidad de modificar el carrito en tiempo real (Añadir, borrar y calcular totales).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Diseño Responsive**: Un diseño web que se va a ver bien en la grán mayoría de dispositivos.
+
+## 🧠 Tecnologías Usadas
+
+- **React.js** (Hooks, Context API para el estado global)
+
+- **React Router** (Navegación de páginas)
+
+- **Bootstrap 5** (Estilos del UI + Íconos)
+
+## 🚀 Cómo visitar la página
+
+**Opción 1: Por medio del link**
+
+- ```
+  [Link acá]
+  ```
+
+**Opción 2: Descargar el repositorio**
+
+1.  **Clonar el repositorio**
+
+```
+
+git clone https://github.com/SkyBreakk/proyecto-2-ecommerce.git
+
+```
+
+2.  **Entrar a la carpeta**
+
+```
+
+cd proyecto-2-ecommerce
+
+```
+
+3.  **Instalar las dependencias**
+
+```
+
+npm install
+
+```
+
+4.  **Iniciar la página**
+
+```
+
+npm run dev
+
+```
+
+## 👥 El Equipo
+
+Nuestro grupo se hace llamar **Servicio L4**, formado para la creación del segundo proyecto del cursado.
+
+Miembros:
+
+- [**Rubén Lopez**](https://github.com/PabloPadilla85) - Scrum Master, Frontend Developer
+- [**Samuel Fernández**](https://github.com/SkyBreakk) - Lider Técnico, Frontend Developer
+- [**Pablo Padilla**](https://github.com/rubendevlop) - Frontend Developer
+- [**María Morales**](https://github.com/moralesa2869) - Frontend Developer
