@@ -6,7 +6,7 @@ const CarouselHome = ({ lista }) => {
   const producto2 = lista[Math.floor(Math.random() * 40)];
 
   return (
-    <div id="carouselExample" className="carousel slide">
+    <div id="carouselExample" className="carousel slide" data-bs-ride="true">
       <div className="carousel-inner d-flex align-items-center">
         {/* Logo y slogan */}
         <div className="carousel-item active">
@@ -22,7 +22,7 @@ const CarouselHome = ({ lista }) => {
           </div>
         </div>
         {/* Producto 1 */}
-        <div className="carousel-item">
+        <div className="carousel-item carousel-1">
           <div className="container d-flex flex-column h-100 justify-content-center">
             <div className="row row-gap-3 justify-content-center">
               <div className="col-12 col-md-6 d-flex flex-column align-items-center producto1">
@@ -41,7 +41,7 @@ const CarouselHome = ({ lista }) => {
           </div>
         </div>
         {/* Producto 2 */}
-        <div className="carousel-item">
+        <div className="carousel-item carousel-2">
           <div className="container d-flex flex-column h-100 justify-content-center">
             <div className="row row-gap-3 justify-content-center">
               <div className="col-12 col-md-4 d-flex justify-content-center align-items-center">

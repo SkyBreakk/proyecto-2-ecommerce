@@ -21,6 +21,7 @@ function SearchBar() {
         type="text"
         className="form-control search-input"
         placeholder="Buscar productos..."
+        id="search-bar"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />

@@ -16,28 +16,28 @@ function FooterApp() {
           <Link to="/about" className="footer-link fs-5 mx-3">
             Acerca de nosotros
           </Link>
-          <Link to="/about" className="footer-link fs-5 mx-3">
+          <Link to="/contact" className="footer-link fs-5 mx-3">
             Contacto
           </Link>
         </div>
 
         {/* DERECHA - REDES */}
         <div className="footer-right">
-          <a href="#" aria-label="Facebook">
+          <Link to="/404" aria-label="Facebook">
             <i className="bi bi-facebook"></i>
-          </a>
+          </Link>
 
-          <a href="#" aria-label="Instagram">
+          <Link to="/404" aria-label="Instagram">
             <i className="bi bi-instagram"></i>
-          </a>
+          </Link>
 
-          <a href="#" aria-label="Twitter / X">
+          <Link to="/404" aria-label="Twitter / X">
             <i className="bi bi-twitter-x"></i>
-          </a>
+          </Link>
 
-          <a href="#" aria-label="LinkedIn">
+          <Link to="/404" aria-label="LinkedIn">
             <i className="bi bi-linkedin"></i>
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
