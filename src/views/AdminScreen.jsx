@@ -6,7 +6,6 @@ import ProductoEnLista from "../components/ProductoEnLista";
 import NewProductModal from "../components/modals/NewProductoModal";
 
 function AdminScreen() {
-
   // Carga de usuarios en la variable de estado
   const [usuarios, setUsuarios] = useState(
     JSON.parse(localStorage.getItem("usuarios")) || []
@@ -28,7 +27,8 @@ function AdminScreen() {
 
   // Carga de productos en la variable de estado
   const [tablaProductos, setTablaProductos] = useState(
-    JSON.parse(localStorage.getItem("productos")) || ListaProductos);
+    JSON.parse(localStorage.getItem("productos")) || ListaProductos
+  );
 
   // Carga de productos en el LocaleStorage
   useEffect(() => {
@@ -37,40 +37,36 @@ function AdminScreen() {
 
   // Borrado de producto
   function borrarProducto(id) {
-    setTablaProductos(tablaProductos.filter((producto) => {
-      return producto.id != id;
-    }));
+    setTablaProductos(
+      tablaProductos.filter((producto) => {
+        return producto.id != id;
+      })
+    );
   }
 
   // Cargar producto nuevo en la variable de estado
   function cargarProducto(nuevoDato) {
-
     let auxID = nuevoDato.id;
     let bandera = tablaProductos.findIndex((auxProducto) => {
-      return auxProducto.id == auxID
+      return auxProducto.id == auxID;
     });
 
     while (bandera != -1) {
       auxID = auxID + 1;
       bandera = tablaProductos.findIndex((auxProducto) => {
-        return auxProducto.id == auxID
+        return auxProducto.id == auxID;
       });
     }
     nuevoDato.id = auxID;
     setTablaProductos([...tablaProductos, nuevoDato]);
   }
-  
+
   // Función para editar un producto
-  function updateProduct(newData) {
-    
-    let auxTablaProductos = tablaProductos;
-    const auxPosicion = tablaProductos.findIndex( (auxProducto) => {
-      return auxProducto.id == newData.id
-    } );
-    console.log(newData);
-    auxTablaProductos[auxPosicion] = newData;
-    setTablaProductos(tablaProductos);
-  }
+  const updateProduct = (newData) => {
+    setTablaProductos((prevProductos) =>
+      prevProductos.map((p) => (p.id === newData.id ? newData : p))
+    );
+  };
 
   // Variable de estado para mostrar el modal de nuevo producto
   const [nuevoProducto, setNuevoProducto] = useState(false);
@@ -78,7 +74,6 @@ function AdminScreen() {
   return (
     <>
       <section className="container-fluid admin-box">
-
         <div className="row align-items-center py-3">
           <div className="col-12 col-md-6 offset-md-3 p-3 admin-contenedor rounded">
             <div className="text-center mb-3">
@@ -111,12 +106,15 @@ function AdminScreen() {
               <h1>Productos registrados</h1>
             </div>
             <div className="d-grid my-3">
-              <button className="btn admin-nuevo-producto py-2 fs-6"
-                onClick={() => setNuevoProducto(true)}>
+              <button
+                className="btn admin-nuevo-producto py-2 fs-6"
+                onClick={() => setNuevoProducto(true)}
+              >
                 Agregar Producto
               </button>
             </div>
-            <NewProductModal show={nuevoProducto}
+            <NewProductModal
+              show={nuevoProducto}
               onClose={() => setNuevoProducto(false)}
               enviarDatos={cargarProducto}
               cantidad={tablaProductos.length}
@@ -131,27 +129,23 @@ function AdminScreen() {
                 </tr>
               </thead>
               <tbody>
-                {
-                  tablaProductos.map((producto, index) => {
-                    return (
-                      <ProductoEnLista key={index} producto={producto}
-                        borrarProducto={() => borrarProducto(producto.id)}
-                        updateDataProduct={updateProduct}
-                      />
-                    )
-                  })
-                }
+                {tablaProductos.map((producto, index) => {
+                  return (
+                    <ProductoEnLista
+                      key={index}
+                      producto={producto}
+                      borrarProducto={() => borrarProducto(producto.id)}
+                      updateDataProduct={updateProduct}
+                    />
+                  );
+                })}
               </tbody>
             </table>
           </div>
         </div>
-
       </section>
     </>
   );
 }
 
 export default AdminScreen;
-
-
-
