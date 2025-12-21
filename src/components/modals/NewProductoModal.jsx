@@ -4,16 +4,35 @@ import { useForm } from "react-hook-form"
 function NewProductModal({ show, onClose, enviarDatos, cantidad }) {
 
     // Declaración de propiedades de useForm
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset: resetForm } = useForm({
+        defaultValues: {
+            nombre: "",
+            precio: "",
+            categoria: "",
+            descripcion: "",
+            imagen: ""
+        }
+    });
+
+    function resetInputs() {
+        resetForm({
+            nombre: "",
+            precio: "",
+            categoria: "",
+            descripcion: "",
+            imagen: ""
+        });
+        onClose();
+    }
 
     // Variable de estado para el nuevo producto
     const [nuevoProducto, setNuevoProducto] = useState(false);
 
     useEffect(() => {
-        if(nuevoProducto){
+        if (nuevoProducto) {
             enviarDatos(nuevoProducto);
         }
-    },[nuevoProducto]);
+    }, [nuevoProducto]);
 
     // Función en HandleSubmit para enviar datos del nuevo producto
     const cargarProducto = (data) => {
@@ -30,7 +49,7 @@ function NewProductModal({ show, onClose, enviarDatos, cantidad }) {
                     count: 0
                 }
             });
-            onClose();
+            resetInputs();
         }
     }
 
@@ -78,7 +97,7 @@ function NewProductModal({ show, onClose, enviarDatos, cantidad }) {
                 </div>
                 <div className="col-12 d-flex gap-2 justify-content-end my-2">
                     <button className="aceptar-nuevo-producto p-2" type="submit">Crear Producto</button>
-                    <button className="cancelar-nuevo-producto p-2" type="button" onClick={onClose}>Cancelar</button>
+                    <button className="cancelar-nuevo-producto p-2" type="button" onClick={resetInputs}>Cancelar</button>
                 </div>
             </form>
         </div>

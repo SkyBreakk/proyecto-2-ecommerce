@@ -189,8 +189,8 @@
 }
 
 .imagen-editar-producto img{
-  height: auto;
-  width: 300px;
+  max-height: 350px;
+  max-width: 300px;
   background-color: var(--color-base-100);
 }
 

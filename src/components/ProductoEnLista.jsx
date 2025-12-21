@@ -2,9 +2,13 @@ import DeleteProductModal from "./modals/DeleteProductoModal";
 import { useState } from "react";
 import MostrarProductoModal from "./modals/MostrarProductoModal";
 
-function ProductoEnLista({ producto, borrarProducto }) {
+function ProductoEnLista({ producto, borrarProducto , updateDataProduct}) {
     const [mostrarModal, setMostrarModal] = useState(false);
     const [mostrarProducto, setMostrarProducto] = useState(false);
+
+    function updateData(newData) {
+        updateDataProduct(newData);
+    }
 
     return <tr>
         <td>{producto.title}</td>
@@ -27,7 +31,9 @@ function ProductoEnLista({ producto, borrarProducto }) {
                         setMostrarModal(false);
                     }} />
                 <MostrarProductoModal producto={producto} mostrarProducto={mostrarProducto}
-                    setMostrarProducto={() => setMostrarProducto(false)} />
+                    setMostrarProducto={() => setMostrarProducto(false)} 
+                    updateData = { updateData }
+                    />
             </div>
         </td>
     </tr>

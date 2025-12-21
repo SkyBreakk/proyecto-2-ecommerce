@@ -45,14 +45,31 @@ function AdminScreen() {
   // Cargar producto nuevo en la variable de estado
   function cargarProducto(nuevoDato) {
 
-    const banderaAux = tablaProductos.findIndex((auxProducto) => {
-      return auxProducto.id == nuevoDato.id
+    let auxID = nuevoDato.id;
+    let bandera = tablaProductos.findIndex((auxProducto) => {
+      return auxProducto.id == auxID
     });
 
-    if (banderaAux == -1) {
-      nuevoDato.id = tablaProductos[tablaProductos.length - 1].id + 1;
+    while (bandera != -1) {
+      auxID = auxID + 1;
+      bandera = tablaProductos.findIndex((auxProducto) => {
+        return auxProducto.id == auxID
+      });
     }
+    nuevoDato.id = auxID;
     setTablaProductos([...tablaProductos, nuevoDato]);
+  }
+  
+  // Función para editar un producto
+  function updateProduct(newData) {
+    
+    let auxTablaProductos = tablaProductos;
+    const auxPosicion = tablaProductos.findIndex( (auxProducto) => {
+      return auxProducto.id == newData.id
+    } );
+    console.log(newData);
+    auxTablaProductos[auxPosicion] = newData;
+    setTablaProductos(tablaProductos);
   }
 
   // Variable de estado para mostrar el modal de nuevo producto
@@ -119,6 +136,7 @@ function AdminScreen() {
                     return (
                       <ProductoEnLista key={index} producto={producto}
                         borrarProducto={() => borrarProducto(producto.id)}
+                        updateDataProduct={updateProduct}
                       />
                     )
                   })
