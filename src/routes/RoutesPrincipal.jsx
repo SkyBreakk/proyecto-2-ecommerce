@@ -9,7 +9,7 @@ import { UserContext } from "../context/UserContext";
 import AdminRoute from "./AdminRoute";
 import AboutScreen from "../views/AboutScreen";
 import ProductScreen from "../views/ProductScreen";
-import Error404 from "../views/error404";
+import Error404 from "../views/Error404";
 import ContactScreen from "../views/ContactScreen";
 
 const RoutesPrincipal = () => {
@@ -29,7 +29,7 @@ const RoutesPrincipal = () => {
           path="admin"
           element={
             <AdminRoute>
-                <AdminScreen />
+              <AdminScreen />
             </AdminRoute>
           }
         />
