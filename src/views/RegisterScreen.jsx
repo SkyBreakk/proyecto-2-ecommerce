@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "../assets/css/RegisterScreen.css";
+import Toast from "../components/ui/Toast";
 
 function RegisterScreen() {
   const {
@@ -24,6 +25,7 @@ function RegisterScreen() {
   );
 
   const [mensaje, setMensaje] = useState(false);
+  const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("usuarios", JSON.stringify(vectorUsuarios));
@@ -45,7 +47,9 @@ function RegisterScreen() {
       };
       setVectorUsuarios([...vectorUsuarios, aux]);
       setMensaje(false);
-      navigate("/");
+      setShowToast(true);
+      setTimeout(() => setShowToast(false), 1200);
+      setTimeout(() => navigate("/"), 1800);
     }
   };
 
@@ -62,13 +66,20 @@ function RegisterScreen() {
                 </p>
               )}
             </div>
-            <form onSubmit={handleSubmit(cargarUsuario)} noValidate>
+            <form
+              onSubmit={handleSubmit(cargarUsuario)}
+              noValidate
+              name="register-form"
+            >
               <div className="mt-3">
-                <label className="form-label registro-label">Nombre</label>
+                <label className="form-label registro-label" htmlFor="nombre">
+                  Nombre
+                </label>
                 <input
                   className="form-control"
                   type="text"
                   id="nombre"
+                  autoComplete="name"
                   {...register("nombre", {
                     required: "Este campo es obligatorio",
                   })}
@@ -80,11 +91,14 @@ function RegisterScreen() {
               </div>
 
               <div className="mt-3">
-                <label className="form-label registro-label">E-mail</label>
+                <label className="form-label registro-label" htmlFor="email">
+                  E-mail
+                </label>
                 <input
                   className="form-control"
                   type="email"
                   id="email"
+                  autoComplete="email"
                   {...register("email", {
                     required: "Este campo es obligatorio",
                     pattern: {
@@ -100,11 +114,14 @@ function RegisterScreen() {
               </div>
 
               <div className="mt-3">
-                <label className="form-label registro-label">Contraseña</label>
+                <label className="form-label registro-label" htmlFor="password">
+                  Contraseña
+                </label>
                 <input
                   className="form-control"
                   type="password"
                   id="password"
+                  autoComplete="off"
                   {...register("password", {
                     required: "La contraseña es obligatoria",
                     pattern: {
@@ -129,6 +146,7 @@ function RegisterScreen() {
           </div>
         </div>
       </section>
+      <Toast show={showToast} message="✅ Se registró con exito!" />
     </>
   );
 }

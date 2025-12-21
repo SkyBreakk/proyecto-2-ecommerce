@@ -72,7 +72,7 @@ function MostrarProductoModal({
   return (
     <section className="modal-editar-producto">
       <section className="ventana-editar-producto p-2 rounded">
-        <form onSubmit={handleSubmit(confirmarGuardar)}>
+        <form onSubmit={handleSubmit(confirmarGuardar)} name="editar-producto">
           <div className="row">
             <div className="col-12">
               <div className="text-center mt-2">
@@ -85,7 +85,9 @@ function MostrarProductoModal({
             <div className="col-12 col-md-6">
               <div className="row">
                 <div className="col-12 my-2">
-                  <label className="form-label">Nombre</label>
+                  <label className="form-label" htmlFor="nombre">
+                    Nombre
+                  </label>
                   <input
                     {...register("nombre", {
                       required: "Este campo es obligatorio",
@@ -93,13 +95,16 @@ function MostrarProductoModal({
                     className="form-control form-control-sm"
                     type="text"
                     id="nombre"
+                    autoComplete="off"
                   />
                   {errors.nombre && (
                     <p className="text-danger">{errors.nombre.message}</p>
                   )}
                 </div>
                 <div className="col-12 my-2">
-                  <label className="form-label">Precio</label>
+                  <label className="form-label" htmlFor="precio">
+                    Precio
+                  </label>
                   <input
                     {...register("precio", {
                       required: "Este campo es obligatorio",
@@ -107,13 +112,16 @@ function MostrarProductoModal({
                     className="form-control form-control-sm"
                     type="text"
                     id="precio"
+                    autoComplete="off"
                   />
                   {errors.precio && (
                     <p className="text-danger">{errors.precio.message}</p>
                   )}
                 </div>
                 <div className="col-12 my-2">
-                  <label className="form-label">Categoría</label>
+                  <label className="form-label" htmlFor="categoria">
+                    Categoría
+                  </label>
                   <input
                     {...register("categoria", {
                       required: "Este campo es obligatorio",
@@ -121,18 +129,22 @@ function MostrarProductoModal({
                     className="form-control form-control-sm"
                     type="text"
                     id="categoria"
+                    autoComplete="off"
                   />
                   {errors.categoria && (
                     <p className="text-danger">{errors.categoria.message}</p>
                   )}
                 </div>
                 <div className="col-12 my-2">
-                  <label className="form-label">Descripción</label>
+                  <label className="form-label" htmlFor="descripcion">
+                    Descripción
+                  </label>
                   <textarea
                     {...register("descripcion")}
                     className="form-control form-control-sm"
                     type="text"
                     id="descripcion"
+                    autoComplete="off"
                   />
                 </div>
                 <div className="col-12 my-2">
@@ -161,7 +173,7 @@ function MostrarProductoModal({
             <div className="col-12 col-md-6">
               <div className="row">
                 <div className="col-12 my-2">
-                  <label className="form-label">
+                  <label className="form-label" htmlFor="imagen">
                     URL de imagen de producto
                   </label>
                   <input
@@ -169,6 +181,7 @@ function MostrarProductoModal({
                     className="form-control form-control-sm"
                     type="text"
                     id="imagen"
+                    autoComplete="off"
                   />
                   <section className="imagen-editar-producto d-flex justify-content-center p-2">
                     <img

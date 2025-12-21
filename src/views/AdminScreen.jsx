@@ -82,7 +82,7 @@ function AdminScreen() {
             <table className="table table-striped table-light">
               <thead>
                 <tr>
-                  <th>Nombre</th>
+                  <th className="d-none d-sm-table-cell">Nombre</th>
                   <th>Correo</th>
                   <th></th>
                 </tr>
@@ -123,8 +123,8 @@ function AdminScreen() {
               <thead>
                 <tr>
                   <th>Producto</th>
-                  <th>Categoría</th>
-                  <th>Precio</th>
+                  <th className="d-none d-lg-table-cell">Categoría</th>
+                  <th className="d-none d-md-table-cell">Precio</th>
                   <th></th>
                 </tr>
               </thead>
