@@ -1,19 +1,258 @@
 @import "./root.css";
 
+/*Fondo*/
 .admin-box {
   background-color: var(--bg-main);
 }
 
+/*Contenedor de tablas*/
 .admin-contenedor {
   background-color: var(--color-base-300);
 }
 
-.admin-boton {
+/*Borrar usuario*/
+.admin-borrar-usuario {
   background-color: var(--error-text);
   color: var(--color-base-100);
 }
 
-.admin-boton:hover {
+.admin-borrar-usuario:hover {
   border-color: var(--error-text);
   color: var(--error-text);
+}
+
+/*Modal de borrado de usuario*/
+.modal-borrar-usuario {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.ventana-borrar-usuario {
+  background-color: var(--color-base-200);
+  animation: animacion-borrar-usuario 0.25s ease;
+}
+
+@keyframes animacion-borrar-usuario {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.boton-borrar-usuario {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: var(--color-base-450);
+  color: var(--color-base-100);
+  border-color: transparent;
+}
+
+.boton-cancelar-usaurio {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: var(--error-text);
+  color: var(--color-base-100);
+  border-color: transparent;
+}
+
+/*Botón agregar producto*/
+.admin-nuevo-producto {
+  background-color: var(--color-base-450);
+  color: var(--color-base-100);
+}
+
+.admin-nuevo-producto:hover {
+  background-color: var(--color-base-100);
+  color: var(--color-base-450);
+}
+
+.admin-nuevo-producto:active {
+  background-color: var(--color-base-450);
+  color: var(--color-base-100);
+}
+
+/*Modal de nuevo producto*/
+.modal-nuevo-producto {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.ventana-nuevo-producto {
+  background-color: var(--color-base-200);
+  animation: animacion-modal-nuevo 0.25s ease;
+}
+
+@keyframes animacion-modal-nuevo {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.aceptar-nuevo-producto {
+  border-radius: 10px;
+  background-color: var(--color-base-450);
+  color: var(--color-base-100);
+  border-color: transparent;
+}
+
+.cancelar-nuevo-producto {
+  border-radius: 10px;
+  background-color: var(--error-text);
+  color: var(--color-base-100);
+  border-color: transparent;
+}
+
+/*Editar producto*/
+.admin-editar-producto {
+  background-color: var(--color-base-450);
+  color: var(--color-base-100);
+}
+
+.admin-editar-producto:hover {
+  border-color: var(--color-base-450);
+  color: var(--color-base-450);
+}
+
+/*Borrar producto*/
+.admin-borrar-producto {
+  background-color: var(--error-text);
+  color: var(--color-base-100);
+}
+
+.admin-borrar-producto:hover {
+  border-color: var(--error-text);
+  color: var(--error-text);
+}
+
+/*Modal de edición de producto*/
+.modal-editar-producto {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.ventana-editar-producto {
+  background-color: var(--color-base-200);
+  animation: animacion-modal-editar 0.25s ease;
+  max-width: 900px;
+  max-height: 800px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-color: var(--color-base-100) var(--color-base-200);
+  scrollbar-width: thin;
+}
+
+@keyframes animacion-modal-editar {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.imagen-editar-producto img{
+  max-height: 350px;
+  max-width: 300px;
+  background-color: var(--color-base-100);
+}
+
+.boton-aceptar-editar {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: var(--color-base-450);
+  color: var(--color-base-100);
+  border-color: transparent;
+}
+
+.boton-cancelar-editar {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: var(--error-text);
+  color: var(--color-base-100);
+  border-color: transparent;
+}
+
+/* Modal de borrado de producto */
+.modal-borrar-producto {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.ventana-borrar-producto {
+  background-color: var(--color-base-200);
+  animation: animacion-modal-borrar 0.25s ease;
+}
+
+@keyframes animacion-modal-borrar {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.boton-aceptar-borrar {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: var(--color-base-450);
+  color: var(--color-base-100);
+  border-color: transparent;
+}
+
+.boton-cancelar-borrar {
+  padding: 5px;
+  border-radius: 10px;
+  background-color: var(--error-text);
+  color: var(--color-base-100);
+  border-color: transparent;
 }

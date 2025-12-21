@@ -44,7 +44,9 @@ function NavBar() {
       {/* MODALS CORREGIDOS */}
       <CartModal open={openCart} onClose={() => setOpenCart(false)} />
 
-      <LoginModal open={openLogin} onClose={() => setOpenLogin(false)} />
+      {openLogin && (
+        <LoginModal open={openLogin} onClose={() => setOpenLogin(false)} />
+      )}
     </>
   );
 }

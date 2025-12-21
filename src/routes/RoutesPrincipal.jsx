@@ -29,7 +29,7 @@ const RoutesPrincipal = () => {
           path="admin"
           element={
             <AdminRoute>
-              <AdminScreen />
+                <AdminScreen />
             </AdminRoute>
           }
         />
