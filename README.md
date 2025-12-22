@@ -28,9 +28,7 @@ Este proyecto fue creado para el curso web17 de RollingCode School.
 
 **Opción 1: Por medio del link**
 
-- ```
-  [Link acá]
-  ```
+- https://comercio-libre.vercel.app/
 
 **Opción 2: Descargar el repositorio**
 
